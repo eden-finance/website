@@ -116,6 +116,7 @@
     0px 4px 10px 0px hsl(240 30% 25% / 0.12),
     0px 8px 10px -1px hsl(240 30% 25% / 0.12);
   --shadow-2xl: 0px 4px 10px 0px hsl(240 30% 25% / 0.3);
+  --card-color: #9669ed;
 }
 
 .dark {
@@ -176,6 +177,7 @@
     0px 4px 10px 0px hsl(240 30% 25% / 0.12),
     0px 8px 10px -1px hsl(240 30% 25% / 0.12);
   --shadow-2xl: 0px 4px 10px 0px hsl(240 30% 25% / 0.3);
+  --card-color: #9669ed;
 }
 
 @layer base {
@@ -213,5 +215,51 @@
 }
 
 ::view-transition-new(root) {
-  animation: reveal 0.4s ease-in-out forwards;
+  animation: reveal 1s ease-in-out forwards;
+}
+
+.card {
+  .card-border,
+  &::before {
+    opacity: 0;
+    transition: opacity 500ms;
+    content: '';
+    position: absolute;
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--border--x) var(--border--y),
+      rgba(0, 0, 0, 0.002),
+      transparent 40%
+    );
+    z-index: 3;
+  }
+  &:hover {
+    .card-border,
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  > .card-content {
+    border-radius: inherit;
+    margin: -4px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .card-border {
+    background: radial-gradient(
+      400px circle at var(--border--x) var(--border--y),
+      var(--card-color),
+      transparent 40%
+    );
+    z-index: 1;
+  }
 }
