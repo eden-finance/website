@@ -1,6 +1,6 @@
 'use client'
 import gsap from 'gsap'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import { features } from '~/constants'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -23,21 +23,31 @@ const DefiEcosystem = () => {
               trigger: sectionRef.current,
               start: 'top bottom',
               end: 'center center',
-              scrub: 0.5,
+              scrub: 1,
             },
           })
 
           tl.fromTo(
             metaRef.current,
             { xPercent: -20, opacity: 0 },
-            { xPercent: 0, opacity: 1, duration: 0.8, ease: 'power2.out' }
+            {
+              xPercent: 0,
+              opacity: 1,
+              duration: 1.5,
+              ease: 'power2.out',
+            }
           )
 
           tl.fromTo(
             mediaRef.current,
             { xPercent: 20, opacity: 0 },
-            { xPercent: 0, opacity: 1, duration: 0.8, ease: 'power2.out' },
-            '<0.2'
+            {
+              xPercent: 0,
+              opacity: 1,
+              duration: 1.5,
+              ease: 'power2.out',
+            },
+            '<0.4'
           )
         })
 
@@ -47,14 +57,19 @@ const DefiEcosystem = () => {
               trigger: sectionRef.current,
               start: 'top bottom',
               end: 'center center',
-              scrub: 0.5,
+              scrub: 1,
             },
           })
 
           tl.fromTo(
             metaRef.current,
             { y: 50, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: 'power2.out' }
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.2,
+              ease: 'power2.out',
+            }
           )
 
           tl.fromTo(
@@ -63,8 +78,8 @@ const DefiEcosystem = () => {
             {
               y: 0,
               opacity: 1,
-              duration: 0.6,
-              stagger: 0.1,
+              duration: 1.2,
+              stagger: 0.2,
               ease: 'power2.out',
             }
           )

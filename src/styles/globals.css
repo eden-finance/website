@@ -117,6 +117,10 @@
     0px 8px 10px -1px hsl(240 30% 25% / 0.12);
   --shadow-2xl: 0px 4px 10px 0px hsl(240 30% 25% / 0.3);
   --card-color: #9669ed;
+  /* Scrollbar colors - light mode */
+  --scrollbar-track: 210 40% 96.1%;
+  --scrollbar-thumb: 270 50% 60%;
+  --scrollbar-thumb-hover: 270 50% 50%;
 }
 
 .dark {
@@ -178,6 +182,11 @@
     0px 8px 10px -1px hsl(240 30% 25% / 0.12);
   --shadow-2xl: 0px 4px 10px 0px hsl(240 30% 25% / 0.3);
   --card-color: #9669ed;
+
+  /* Scrollbar colors - dark mode */
+  --scrollbar-track: 222.2 84% 4.9%;
+  --scrollbar-thumb: 270 50% 40%;
+  --scrollbar-thumb-hover: 270 50% 50%;
 }
 
 @layer base {
@@ -186,6 +195,30 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--scrollbar-track));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--scrollbar-thumb));
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(var(--scrollbar-thumb-hover));
+  }
+
+  /* Firefox */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
   }
 }
 

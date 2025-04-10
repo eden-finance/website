@@ -51,13 +51,13 @@ export default function AdavantageCardLarge({
 
   return (
     <div
-      className="flex h-full max-w-[1280px] flex-col items-start justify-end gap-8 rounded-[32px] border border-[rgba(150,105,237,0.1)] p-4 pb-0"
+      className="relative flex max-w-[1280px] flex-col items-start gap-8 overflow-hidden rounded-[32px] border-[rgba(150,105,237,0.1)] p-4 pb-0 sm:h-[536px] sm:min-w-[1280px] sm:flex-row sm:p-8 dark:border"
       style={{ ...patternStyle, transform: transformStyle }}
       ref={itemRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <div>
+      <div className="max-w-[531px] items-start">
         <motion.button
           className="rounded-full bg-white px-4 py-2 text-sm font-medium text-purple-500"
           whileHover={{ scale: 1.05 }}
@@ -65,22 +65,22 @@ export default function AdavantageCardLarge({
         >
           {title}
         </motion.button>
+        <motion.h2
+          className="mt-[16px] mb-4 text-2xl font-semibold text-purple-300 sm:text-[28px]"
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
+        >
+          {description}
+        </motion.h2>
       </div>
 
-      <motion.h2
-        className="mb-4 text-3xl leading-tight font-semibold text-purple-300"
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5 }}
-      >
-        {description}
-      </motion.h2>
       <BlurImage
         src={image}
         alt={title}
         width={width}
         height={height}
-        className="h-full max-w-full"
+        className="right-0 bottom-0 sm:absolute"
       />
     </div>
   )

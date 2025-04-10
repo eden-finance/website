@@ -51,7 +51,7 @@ export default function AdavantageCard({
 
   return (
     <div
-      className="flex h-full flex-col items-start justify-end gap-8 rounded-[32px] border border-[rgba(150,105,237,0.1)] p-4 pb-0 sm:w-[608px] sm:p-8 sm:pb-0 md:min-h-[608px]"
+      className="flex h-full flex-col items-start justify-end gap-8 rounded-[32px] border-[rgba(150,105,237,0.1)] p-4 pb-0 sm:w-[608px] sm:p-8 sm:pb-0 md:min-h-[608px] dark:border"
       style={{ ...patternStyle, transform: transformStyle }}
       ref={itemRef}
       onMouseMove={handleMouseMove}
