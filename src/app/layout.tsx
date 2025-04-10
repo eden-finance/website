@@ -24,7 +24,7 @@ export default async function RootLayout({
   const theme = await retrive_theme()
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('antialiased', inter.variable)}>
+      <body className={cn('scroll-smooth antialiased', inter.variable)}>
         <ThemeProvider defaultTheme={theme}>
           <main className="bg-background font-inter relative mx-auto min-h-dvh w-full max-w-[1500px]">
             {children}
