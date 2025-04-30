@@ -1,9 +1,15 @@
+"use client"
+
 import Link from 'next/link'
 import { Button } from 'ui/button'
 import LogoIcon from '../icons/logo'
 import { ThemeToggle } from '../miscellaneous/toggle'
 
 export default function Navbar() {
+
+  function handleRedirectToApp() {
+    window.open('https://app.eden-finance.xyz', '_blank')
+  }
   return (
     <nav className="bg-background/80 sticky top-0 z-50 w-full border-b border-purple-500/10 shadow-sm backdrop-blur-md dark:bg-black/80">
       <div className="px-4 sm:px-6 lg:px-8">
@@ -16,7 +22,7 @@ export default function Navbar() {
           </div>
           <div className="flex gap-2">
             <ThemeToggle />
-            <Button className="bg-purple-500 text-white hover:bg-purple-600">
+            <Button onClick={() => handleRedirectToApp()} className="bg-purple-500 text-white hover:bg-purple-600">
               Launch App
             </Button>
           </div>
