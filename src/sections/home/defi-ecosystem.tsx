@@ -99,10 +99,9 @@ const DefiEcosystem = () => {
       className="container mx-auto w-full px-4 py-16 dark:bg-black"
     >
       <div ref={metaRef} className="mb-12 text-center">
-        <h2 className="mb-4 text-4xl font-bold">AI-Enhanced DeFi Ecosystem</h2>
+        <h2 className="mb-4 text-4xl font-bold">Backed and Trusted</h2>
         <p className="text-muted-foreground mx-auto max-w-3xl">
-          Eden Finance combines cutting-edge AI technology with DeFi primitives
-          to create a more secure, efficient, and accessible financial
+          Eden Finance has been trusted by leading companies and institution
           ecosystem.
         </p>
       </div>

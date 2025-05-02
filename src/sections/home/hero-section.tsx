@@ -36,13 +36,11 @@ export default function HeroSection() {
 
           <div className="space-y-2">
             <h1 className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-              Redefining DeFi with{' '}
-              <span className="text-[#9669ED]">AI-Powered</span> Intelligence
+            Unlock the {' '}
+              <span className="text-[#9669ED]">Power</span> of DeFi
             </h1>
             <p className="max-w-lg dark:text-gray-300">
-              Eden Finance combines yield-bearing stablecoins, decentralized
-              lending, and AI risk management to create a more secure,
-              efficient, and accessible DeFi ecosystem.
+            Eden Finance is Africa biggest liquidity protocol. You can Supply, Stake, Swap, and borrow Tokens
             </p>
           </div>
 

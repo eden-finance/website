@@ -55,23 +55,23 @@ export const ORBITAL_ELEMENTS = [
 export const features: FeatureCardProps[] = [
     {
         icon: Link,
-        title: "Yield-Bearing aUSD",
+        title: "Supply & Earn",
         description:
-            "Mint aUSD by depositing stablecoins and automatically earn yield through lending strategies and cross-chain protocols.",
+            "Deposit your digital assets into Eden's liquidity pools and earn competitive interest rates.​",
     },
     {
         icon: BarChart3,
-        title: "AI-Enhanced Risk Management",
+        title: "Borrow",
         description:
-            "Proprietary AI algorithms monitor loan health, assess creditworthiness, and adjust collateral requirements dynamically.",
+            "Access instant loans by collateralizing your assets, with flexible terms and transparent rates.​",
     },
     {
         icon: Coins,
-        title: "Decentralized Lending & Borrowing",
+        title: "Swap",
         description:
-            "Access efficient lending and borrowing services with smart contract-controlled liquidations to protect lenders.",
+            "Exchange a wide range of tokens effortlessly, with real-time pricing and minimal slippage.​",
     },
-    {
+   /*  {
         icon: Zap,
         title: "Low & Fast Transactions",
         description: "Built on AssetChain's scalable infrastructure with gas fees as low as $0.00004 per transaction.",
@@ -87,5 +87,5 @@ export const features: FeatureCardProps[] = [
         title: "AI-Enhanced Security",
         description:
             "Advanced multi-signature security measures protect funds and prevent smart contract exploits for maximum safety.",
-    },
+    }, */
 ]
