@@ -71,7 +71,7 @@ export const features: FeatureCardProps[] = [
         description:
             "Exchange a wide range of tokens effortlessly, with real-time pricing and minimal slippage.​",
     },
-   /*  {
+    {
         icon: Zap,
         title: "Low & Fast Transactions",
         description: "Built on AssetChain's scalable infrastructure with gas fees as low as $0.00004 per transaction.",
@@ -87,5 +87,5 @@ export const features: FeatureCardProps[] = [
         title: "AI-Enhanced Security",
         description:
             "Advanced multi-signature security measures protect funds and prevent smart contract exploits for maximum safety.",
-    }, */
+    },
 ]
