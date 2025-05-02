@@ -23,7 +23,7 @@ const Page = () => {
         <AlternativeStatsSection />
         <DefiEcosystem />
       </section>
-      <section className="relative">
+     {/*  <section className="relative">
         <Image
           src="/noise_effect.webp"
           alt="noise effect"
@@ -32,7 +32,7 @@ const Page = () => {
           className="pointer-events-none fixed inset-0 z-50 h-dvh w-screen md:opacity-90"
         />
         <Adavantages />
-      </section>
+      </section> */}
       <section className="relative">
         <EdenFinanceComparison />
       </section>
