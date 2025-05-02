@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Adavantages from '~/sections/home/adavantage'
+// import Adavantages from '~/sections/home/adavantage'
 import HeroSection from '~/sections/home/hero-section'
 import DefiEcosystem from '~/sections/home/defi-ecosystem'
 import AlternativeStatsSection from '~/sections/home/stats-section'
