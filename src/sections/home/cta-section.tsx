@@ -66,7 +66,7 @@ export default function CTASection() {
             Launch App
           </Link>
           <Link
-            href="#"
+            href="https://app.eden-finance.xyz"
             className="rounded-lg border border-white px-8 py-3 font-medium text-white transition-transform hover:scale-105 hover:bg-white/10"
           >
             For Developers

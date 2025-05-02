@@ -44,7 +44,7 @@ export default function AlternativeStatsSection() {
         {/* Desktop layout (horizontal) */}
         <div className="relative hidden gap-8 md:grid md:grid-cols-2 lg:grid-cols-4">
           <div className="flex flex-col items-center text-center md:items-start md:text-left">
-            <h3 className="text-4xl font-bold md:text-5xl">$0.000003</h3>
+            <h3 className="text-4xl font-bold md:text-5xl">$0.00003</h3>
             <p className="mt-2 text-gray-400">Low Transaction Fee</p>
           </div>
 
