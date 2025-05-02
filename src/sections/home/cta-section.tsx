@@ -38,7 +38,7 @@ export default function CTASection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          Ready to Experience the Future of DeFi?
+          Our Mission
         </motion.h2>
 
         {/* Subheading */}
@@ -48,8 +48,8 @@ export default function CTASection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          Join Eden Finance today and unlock the power of AI-enhanced yield
-          generation, secure lending, and cross-chain optimization.
+          We’ll simplify DeFi’s lending experience to enable the next generation of users.
+          Deposit and borrow cross-chain seamlessly while earning
         </motion.p>
 
         {/* Buttons */}
@@ -69,7 +69,7 @@ export default function CTASection() {
             href="#"
             className="rounded-lg border border-white px-8 py-3 font-medium text-white transition-transform hover:scale-105 hover:bg-white/10"
           >
-            Read Documentation
+            For Developers
           </Link>
         </motion.div>
       </div>
