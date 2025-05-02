@@ -31,8 +31,7 @@ export default function Footer() {
             </div>
 
             <p className="text-sm text-gray-300 md:text-base">
-              Redefining DeFi with AI-powered intelligence, yield-bearing
-              stablecoins, and cross-chain integrations.
+              Eden is leading the DeFi Renaissance in Africa, committed to its mission of bringing global finance onchain.
             </p>
 
             {/* Social icons - mobile and desktop */}
@@ -59,7 +58,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="#"
+                href="https://x.com/0xEdenFi"
                 className="text-gray-300 transition-colors hover:text-white"
               >
                 <Twitter size={20} />
