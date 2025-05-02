@@ -36,8 +36,8 @@ export default function HeroSection() {
 
           <div className="space-y-2">
             <h1 className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-            Unlock the {' '}
-              <span className="text-[#9669ED]">Power</span> of DeFi
+            Earn {' '}
+              <span className="text-[#9669ED]">Interest</span> & Borrow Assets Seamlessly
             </h1>
             <p className="max-w-lg dark:text-gray-300">
             Eden Finance is Africa biggest liquidity protocol. You can Supply, Stake, Swap, and borrow Tokens
