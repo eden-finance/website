@@ -14,7 +14,7 @@ import LogoIcon from '../../components/icons/logo'
 export default function EdenFinanceComparison() {
   const features = [
     {
-      name: 'AI-Enhanced Risk Management',
+      name: '🌐 Multi-Network Support',
       edenFinance: true,
       traditional: false,
     },
@@ -24,7 +24,7 @@ export default function EdenFinanceComparison() {
       traditional: false,
     },
     {
-      name: 'Low-Cost Transactions',
+      name: '🔒 Security & Transparency',
       edenFinance: true,
       traditional: false,
     },
@@ -34,7 +34,7 @@ export default function EdenFinanceComparison() {
       traditional: false,
     },
     {
-      name: 'Fintech & Developer API',
+      name: '📈 Real-Time Analytics',
       edenFinance: true,
       traditional: false,
     },
@@ -50,7 +50,7 @@ export default function EdenFinanceComparison() {
       <div className="w-full max-w-full lg:max-w-[1280px]">
         <div className="w-full px-4 py-8 text-center sm:px-6 sm:py-12">
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl md:text-4xl">
-            How We Compare
+            Why We Standout
           </h2>
           <p className="mx-auto max-w-2xl text-base text-gray-400 sm:text-lg">
             Eden Finance offers significant advantages over traditional DeFi
