@@ -13,7 +13,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'Eden Finance',
-  description: 'Eden Finance combines yield-bearing stablecoins, decentralized lending, and AI risk management to create a more secure, efficient, and accessible DeFi ecosystem.',
+  description: 'Eden Finance is your gateway to a decentralized financial ecosystem. Built on AssetChain, Eden offers a secure, transparent, and user-friendly platform for all your DeFi needs.',
 }
 
 export default async function RootLayout({

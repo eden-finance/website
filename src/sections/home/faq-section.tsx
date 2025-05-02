@@ -21,32 +21,32 @@ export default function FAQSection() {
     {
       question: 'What is Eden Finance?',
       answer:
-        'Eden Finance is an AI-enhanced DeFi protocol that combines cutting-edge artificial intelligence with decentralized finance primitives to create a more secure, efficient, and accessible financial ecosystem. It offers features like cross-chain yield optimization, low-cost transactions, and real-world asset integration.',
+        'Eden Finance is a decentralised non-custodial liquidity protocol where users can participate as suppliers or borrowers. Suppliers provide liquidity to the market while earning interest, and borrowers can access liquidity by providing collateral that exceeds the borrowed amount.',
     },
     {
-      question: 'Is Eden Finance secure?',
+      question: 'Where are supplied tokens stored?',
       answer:
-        'Yes, Eden Finance prioritizes security through multiple layers of protection. Our platform uses AI-enhanced risk management to detect and prevent potential threats, undergoes regular security audits by leading firms, and implements robust smart contract architecture to safeguard user assets.',
+        'Supplied tokens are stored in publicly accessible smart contracts that enable over collateralised borrowing according to governance-approved parameters.',
     },
     {
-      question: 'Is Eden Finance secure?',
+      question: 'Do I need a wallet to interact with Eden Finance?',
       answer:
-        'Yes, Eden Finance prioritizes security through multiple layers of protection. Our platform uses AI-enhanced risk management to detect and prevent potential threats, undergoes regular security audits by leading firms, and implements robust smart contract architecture to safeguard user assets.',
+        'Yes, you need a wallet on the corresponding network you want such as hardware wallet, browser extension, mobile wallet, multi signature wallets',
     },
     {
-      question: 'Is Eden Finance secure?',
+      question: 'How do I supply',
       answer:
-        'Yes, Eden Finance prioritizes security through multiple layers of protection. Our platform uses AI-enhanced risk management to detect and prevent potential threats, undergoes regular security audits by leading firms, and implements robust smart contract architecture to safeguard user assets.',
+        'Browse to the "supply" section and click on "supply" for the asset you want to supply. Select the amount you would like to supply and submit your transaction.',
     },
     {
-      question: 'Is Eden Finance secure?',
+      question: 'What is staking',
       answer:
-        'Yes, Eden Finance prioritizes security through multiple layers of protection. Our platform uses AI-enhanced risk management to detect and prevent potential threats, undergoes regular security audits by leading firms, and implements robust smart contract architecture to safeguard user assets.',
+        'Staking consists of supplying supported tokens within the protocol Safety Module. The purpose of staking is to act as a mitigation tool in case of a shortfall event. As an incentive for this, Safety Module stakers will receive Safety Incentives.',
     },
     {
-      question: 'Is Eden Finance secure?',
+      question: 'How much would I pay in interest?',
       answer:
-        'Yes, Eden Finance prioritizes security through multiple layers of protection. Our platform uses AI-enhanced risk management to detect and prevent potential threats, undergoes regular security audits by leading firms, and implements robust smart contract architecture to safeguard user assets.',
+        'The interest rate you pay for borrowing assets depends on the supply and demand ratio of the asset and interest rate curve parameters determined by Aave Governance.',
     },
   ]
 
