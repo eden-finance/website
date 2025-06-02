@@ -34,19 +34,19 @@ export default function FAQSection() {
         'Yes, you need a wallet on the corresponding network you want such as hardware wallet, browser extension, mobile wallet, multi signature wallets',
     },
     {
-      question: 'How do I supply',
+      question: 'How do I supply?',
       answer:
         'Browse to the "supply" section and click on "supply" for the asset you want to supply. Select the amount you would like to supply and submit your transaction.',
     },
     {
-      question: 'What is staking',
+      question: 'What is staking?',
       answer:
         'Staking consists of supplying supported tokens within the protocol Safety Module. The purpose of staking is to act as a mitigation tool in case of a shortfall event. As an incentive for this, Safety Module stakers will receive Safety Incentives.',
     },
     {
       question: 'How much would I pay in interest?',
       answer:
-        'The interest rate you pay for borrowing assets depends on the supply and demand ratio of the asset and interest rate curve parameters determined by Aave Governance.',
+        'The interest rate you pay for borrowing assets depends on the supply and demand ratio of the asset and interest rate curve parameters determined by Eden Governance.',
     },
   ]
 

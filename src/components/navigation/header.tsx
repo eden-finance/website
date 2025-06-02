@@ -23,7 +23,7 @@ export default function Navbar() {
               className="bg-purple-500 text-white hover:bg-purple-600"
             >
               <Link
-                href="https://app.eden-finance.xyz"
+                href="https://app.edenfinance.org"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -36,11 +36,11 @@ export default function Navbar() {
               className="border-purple-500 text-purple-500 hover:bg-purple-100 dark:hover:bg-purple-900"
             >
               <Link
-                href="https://leaderboard.eden-finance.xyz/"
+                href="https://leaderboard.edenfinance.org/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                View Leaderboard
+                Leaderboard
               </Link>
             </Button>
           </div>

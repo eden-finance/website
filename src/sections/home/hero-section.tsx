@@ -1,3 +1,5 @@
+"use client"
+
 import { ArrowRight, Shield, TrendingUp, Zap } from 'lucide-react'
 import { Button } from 'ui/button'
 import dynamic from 'next/dynamic'
@@ -8,6 +10,11 @@ const OrbitalAnimation = dynamic(() => import('./orbital-animation'), {
 })
 
 export default function HeroSection() {
+
+  function handleRedirectToApp() {
+    window.open('https://app.edenfinance.com', '_blank')
+  }
+
   return (
     <section className="text-foreground relative flex min-h-[800px] w-full items-center overflow-hidden bg-gradient-to-b from-[#F7F5FC] from-40% to-[#ECEAFD] px-4 pt-10 lg:px-8 lg:pt-0 dark:bg-gradient-to-b dark:from-[#09090B] dark:from-40% dark:to-[#32234F] dark:text-white">
       <Image
@@ -26,7 +33,7 @@ export default function HeroSection() {
             </div>
             <div className="bg-opacity-20 flex items-center gap-2 rounded-full px-3 py-1.5 text-sm">
               <TrendingUp className="h-4 w-4 text-orange-400" />
-              <span>Optimized Yields</span>
+              <span>High APYs</span>
             </div>
             <div className="bg-opacity-20 flex items-center gap-2 rounded-full px-3 py-1.5 text-sm">
               <Zap className="h-4 w-4 text-yellow-400" />
@@ -36,15 +43,15 @@ export default function HeroSection() {
 
           <div className="space-y-2">
             <h1 className="text-4xl leading-tight font-bold md:text-5xl lg:text-6xl">
-            Earn {' '}
-              <span className="text-[#9669ED]">Interest</span> & Borrow <span className="text-[#9669ED]">Assets</span> Seamlessly
+            Supply, {' '}
+              <span className="text-[#9669ED]">Yield Interest</span> & Borrow <span className="text-[#9669ED]">Assets</span> Seamlessly
             </h1>
             <p className="max-w-lg dark:text-gray-300">
-            Eden Finance is Africa biggest liquidity protocol. You can Supply, Stake, Swap, and borrow Tokens
+            Eden Finance is Africa biggest liquidity protocol on assetchain. Supply, Earn Yield, Swap, and borrow Tokens.
             </p>
           </div>
 
-          <Button className="h-10 bg-[#26a17aa1] px-6 py-6 text-base text-white hover:bg-purple-700">
+          <Button onClick={() => handleRedirectToApp()} className="h-10 bg-[#26a17aa1] px-6 py-6 text-base text-white hover:bg-purple-700">
             Get Started
             <ArrowRight className="ml-2 size-5" />
           </Button>
