@@ -1,15 +1,8 @@
 import 'styles'
 import { cn } from '~/lib/utils'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from '~/provider/theme-provider'
 import { retrive_theme } from '~/actions/theme'
-
-const inter = Inter({
-  display: 'swap',
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
 
 export const metadata: Metadata = {
   title: 'Eden Finance - Garden of Eden onchain.',
@@ -24,9 +17,9 @@ export default async function RootLayout({
   const theme = await retrive_theme()
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={cn('scroll-smooth antialiased', inter.variable)}>
+      <body className={cn('scroll-smooth antialiased')}>
         <ThemeProvider defaultTheme={theme}>
-          <main className="bg-background font-inter relative mx-auto min-h-dvh w-full max-w-[1500px]">
+          <main className="bg-background relative mx-auto min-h-dvh w-full max-w-[1500px]">
             {children}
           </main>
         </ThemeProvider>

@@ -1,18 +1,17 @@
-import SmoothCursor from '~/components/miscellaneous/cursor'
+// import SmoothCursor from '~/components/miscellaneous/cursor'
 import Footer from '~/components/navigation/footer'
-import Navbar from '~/components/navigation/header'
+import Navbar from '~/components/navigation/navbar'
 
 export default function HomeLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <>
       <Navbar />
-
-      {children}
-      <SmoothCursor />
+      <div className="px-4">{children}</div>
+      {/* <SmoothCursor /> */}
       <Footer />
     </>
   )
