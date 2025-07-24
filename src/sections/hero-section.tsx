@@ -41,7 +41,7 @@ const Hero = () => {
         <img src="/eden-frame.svg" alt="Eden Finance" className="" />
         <div className="flex max-w-[641px] flex-col items-center">
           <h1 className="text-foreground -mt-12 mb-4 text-center text-5xl font-bold md:text-[64px] md:leading-[72px]">
-            Africa's Complete DeFi Ecosystem
+            Africa&apos;s Complete DeFi Ecosystem
           </h1>
           <p className="text-muted-foreground text-center text-sm text-[20px] leading-[32px] font-medium sm:text-base">
             Lend, borrow, and invest across multiple pools from Nigerian money
