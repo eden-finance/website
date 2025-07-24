@@ -50,7 +50,10 @@ const ProductsSection = () => {
     activeTab === 'lending' ? lendingBorrowingData : multiPoolData
 
   return (
-    <div className="flex flex-col items-center justify-center py-16">
+    <div
+      id="lending"
+      className="flex flex-col items-center justify-center px-4 py-22 sm:px-0"
+    >
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
         <h1 className="text-foreground mb-2 max-w-[365px] text-center text-[32px] font-bold">
           One Ecosystem, Two Powerful Products
@@ -63,7 +66,10 @@ const ProductsSection = () => {
 
       {/* Tab Navigation */}
       <div className="mb-12 flex items-center justify-center">
-        <div className="rounded-[12px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-px">
+        <div
+          className="rounded-[12px] p-px"
+          style={{ background: 'var(--primary-gradient)' }}
+        >
           <div className="bg-background flex rounded-[12px] p-2">
             <button
               onClick={() => setActiveTab('lending')}
@@ -90,13 +96,14 @@ const ProductsSection = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="mx-auto grid max-w-[1259px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {currentData.map((item, index) => (
           <div
             key={`${activeTab}-${index}`}
-            className="rounded-[16px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-px"
+            className="w-full rounded-[16px] p-px"
+            style={{ background: 'var(--primary-gradient)' }}
           >
-            <div className="bg-background flex h-full max-w-[420px] flex-col items-start space-y-4 rounded-[16px] p-8">
+            <div className="bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-8">
               <img src={item.icon} alt={item.title} />
               <h3 className="text-foreground text-xl leading-[28px] font-bold">
                 {item.title}

@@ -8,7 +8,7 @@ const Footer = () => {
   ]
 
   return (
-    <footer className="w-full px-4 pt-16">
+    <footer className="w-full px-4 pt-16 sm:px-0">
       <div className="mx-auto max-w-[851px] text-center">
         <div className="mb-8 flex flex-wrap items-center justify-center gap-10">
           {footerLinks.map((link) => (
@@ -23,19 +23,21 @@ const Footer = () => {
         </div>
 
         <div className="mb-12">
-          <p className="text-muted-foreground text-sm">
+          <p className="text-muted-foreground font-medium">
             © 2025 Eden Finance. All rights reserved <br />
             Built on AssetChain • Powered by cNGN
           </p>
         </div>
-
-        {/* Logo */}
         <div className="flex justify-center">
-          {/* If you have an actual logo image, replace the div above with: */}
           <img
             src="/eden-logo-footer.png"
             alt="Eden Finance"
-            // className="h-24 w-auto"
+            className="hidden dark:block"
+          />
+          <img
+            src="/eden-logo-footer-light.png"
+            alt="Eden Finance"
+            className="block dark:hidden"
           />
         </div>
       </div>

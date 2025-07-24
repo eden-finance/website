@@ -3,6 +3,7 @@ import PoolsSection from '~/sections/pools-section'
 import ProductsSection from '~/sections/products-section'
 import CTA from '~/sections/cta-section'
 import HowItWorks from '~/sections/how-it-works-section'
+import Investment from '~/sections/investment-section'
 const Page = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const Page = () => {
       <ProductsSection />
       <CTA />
       <HowItWorks />
+      <Investment />
     </>
   )
 }

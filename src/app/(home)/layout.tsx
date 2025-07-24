@@ -10,8 +10,7 @@ export default function HomeLayout({
   return (
     <>
       <Navbar />
-      <div className="px-4">{children}</div>
-      {/* <SmoothCursor /> */}
+      <div className="">{children}</div>
       <Footer />
     </>
   )

@@ -96,7 +96,7 @@ const DefiEcosystem = () => {
   return (
     <div
       ref={sectionRef}
-      className="container mx-auto w-full px-4 py-16 dark:bg-black"
+      className="container mx-auto w-full px-4 py-20 dark:bg-black"
     >
       <div ref={metaRef} className="mb-12 text-center">
         <h2 className="mb-4 text-4xl font-bold">Backed and Trusted</h2>

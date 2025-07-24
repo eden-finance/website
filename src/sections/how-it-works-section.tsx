@@ -15,7 +15,7 @@ const HowItWorks = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     pauseOnHover: true,
     arrows: false,
     beforeChange: (current: number, next: number) => setActiveSlide(next),
@@ -40,32 +40,32 @@ const HowItWorks = () => {
   // Sample data - replace with your actual data
   const howItWorksData = [
     {
-      icon: '🔗',
-      title: 'Connect Your Wallet',
+      step: 1,
+      title: 'Choose Your Pool',
       description:
-        'Securely link your crypto wallet to our platform with industry-standard encryption and protection.',
-      image: '/api/placeholder/300/200',
+        'Explore diverse investment opportunities across money markets, government bonds, and tokenized corporate assets. Filter by APY, risk level, and duration to find the perfect match for your goals.',
+      image: '/eden-pool.png',
     },
     {
-      icon: '💰',
-      title: 'Choose Investment Pool',
+      step: 2,
+      title: 'Invest Any Token',
       description:
-        'Select from our curated investment pools with different risk levels and expected returns.',
-      image: '/api/placeholder/300/200',
+        'No need to swap manually. Deposit any supported token, and Eden converts it to the required asset using built-in swapping technology. This makes investing seamless, fast, and beginner-friendly.',
+      image: '/eden-invest.png',
     },
     {
-      icon: '🚀',
-      title: 'Start Earning',
+      step: 3,
+      title: 'Earn and Utilize',
       description:
-        'Your funds are automatically deployed across diversified DeFi protocols to maximize returns.',
-      image: '/api/placeholder/300/200',
+        "Once invested, you'll receive LP tokens that represent your position in the pool. These tokens can be used in multiple ways—hold them to earn yield or stake them for extra rewards",
+      image: '/eden-earn.png',
     },
     {
-      icon: '📊',
-      title: 'Track & Withdraw',
+      step: 4,
+      title: 'Withdraw Anytime',
       description:
-        'Monitor your earnings in real-time and withdraw your funds anytime with no lock-up periods.',
-      image: '/api/placeholder/300/200',
+        'When your investment matures or you need funds, withdraw your principal and accumulated returns with a single click. For flexible pools, you can even withdraw early, subject to pool terms.',
+      image: '/eden-withdraw.png',
     },
   ]
 
@@ -74,9 +74,12 @@ const HowItWorks = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center py-16">
+    <div
+      id="docs"
+      className="flex flex-col items-center justify-center px-4 py-22 sm:px-0"
+    >
       <div className="heading-tag text-foreground mb-3 flex items-center justify-center rounded-[32px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[2px]">
-        <div className="rounded-[32px] bg-[#150f21] px-6 py-3 text-sm font-medium">
+        <div className="text-primary-foreground rounded-[32px] px-6 py-3 text-sm font-medium dark:bg-[#150f21]">
           How It Works
         </div>
       </div>
@@ -91,32 +94,47 @@ const HowItWorks = () => {
       </div>
 
       {/* Slider Container */}
-      <div className="w-full max-w-7xl px-4 mt-10">
+      <div className="mt-10 w-full max-w-7xl">
         <Slider ref={sliderRef} {...settings}>
           {howItWorksData.map((item, index) => (
-            <div key={index} className="px-3">
+            <div key={index} className="">
               <div
-                className={`rounded-2xl p-6 text-white transition-all duration-300 ease-in-out ${
+                className={`h-[595px] rounded-2xl p-6 sm:mx-2 ${
                   isActiveCard(index)
-                    ? 'bg-gradient-to-r from-[#7E48F3] to-[#513293]'
-                    : 'bg-[#070707]'
+                    ? 'bg-gradient-to-r from-[#7E48F3] to-[#513293] text-white'
+                    : 'bg-popover text-foreground opacity-40'
                 }`}
               >
-                {/* Card Content */}
-                <div className="mb-4">
-                  <div className="mb-4 text-4xl">{item.icon}</div>
+                <div className="mb-4 h-full">
+                  <div
+                    className={`text-foreground mb-4 inline-flex items-center justify-center text-[24px] font-bold ${
+                      isActiveCard(index) &&
+                      'h-10 w-10 rounded-[8px] text-white'
+                    }`}
+                    style={
+                      isActiveCard(index)
+                        ? {
+                            background:
+                              'radial-gradient(154.81% 154.81% at 4.81% -35.58%, #7435FA 0%, #050505 100%)',
+                          }
+                        : {}
+                    }
+                  >
+                    {item.step}
+                  </div>
+                  <h3 className="mb-3 text-[32px] font-bold">{item.title}</h3>
+                  <p
+                    className={`text-foreground mb-10 text-sm leading-relaxed ${isActiveCard(index) && 'text-white'} `}
+                  >
+                    {item.description}
+                  </p>
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="mb-4 h-48 w-full rounded-lg object-cover"
+                    className={`h-[320px] w-full object-cover  ${
+                      isActiveCard(index) ? '' : 'grayscale'
+                    }`}
                   />
-                </div>
-
-                <div>
-                  <h3 className="mb-3 text-xl font-bold">{item.title}</h3>
-                  <p className="text-sm leading-relaxed text-gray-300">
-                    {item.description}
-                  </p>
                 </div>
               </div>
             </div>

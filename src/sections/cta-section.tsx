@@ -2,8 +2,8 @@ import React from 'react'
 
 const CTA = () => {
   return (
-    <div className="flex items-center justify-center py-16">
-      <div className="relative mx-auto w-full max-w-7xl px-4">
+    <div className="flex items-center justify-center py-22 px-4 sm:px-0">
+      <div className="relative mx-auto w-full max-w-7xl">
         {/* Main Gradient Container */}
         <div
           className="relative overflow-hidden rounded-[24px]"

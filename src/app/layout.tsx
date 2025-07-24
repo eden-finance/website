@@ -6,7 +6,8 @@ import { retrive_theme } from '~/actions/theme'
 
 export const metadata: Metadata = {
   title: 'Eden Finance - Garden of Eden onchain.',
-  description: 'Eden Finance is your gateway to a decentralized financial ecosystem. Built on AssetChain, Eden offers a secure, transparent, and user-friendly platform for all your DeFi needs.',
+  description:
+    'Eden Finance is your gateway to a decentralized financial ecosystem. Built on AssetChain, Eden offers a secure, transparent, and user-friendly platform for all your DeFi needs.',
 }
 
 export default async function RootLayout({
@@ -19,9 +20,7 @@ export default async function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn('scroll-smooth antialiased')}>
         <ThemeProvider defaultTheme={theme}>
-          <main className="bg-background relative mx-auto min-h-dvh w-full max-w-[1500px]">
-            {children}
-          </main>
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

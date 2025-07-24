@@ -110,7 +110,7 @@ const PoolsSection = () => {
   const triplePoolsData = [...poolsData, ...poolsData, ...poolsData]
 
   const PoolCard = ({ pool }: { pool: PoolCardProps }) => (
-    <div className="pool-card bg-accent flex w-[340px] sm:w-[410px] flex-shrink-0 flex-col rounded-[12px] px-6 py-10">
+    <div className="pool-card bg-accent flex w-[340px] flex-shrink-0 flex-col rounded-[12px] px-6 py-10 sm:w-[410px]">
       <h1 className="text-foreground text-[24px] font-bold capitalize">
         {pool.title}
       </h1>
@@ -157,7 +157,7 @@ const PoolsSection = () => {
               </p>
               <p className="text-foreground font-bold">{pool.expectedReturn}</p>
             </div>
-            <div className="flex flex-col gap-1 w-1/2">
+            <div className="flex w-1/2 flex-col gap-1">
               <p className="text-muted-foreground text-sm font-medium">
                 Lockdown Duration
               </p>
@@ -175,7 +175,7 @@ const PoolsSection = () => {
                 {pool.investmentRange}
               </p>
             </div>
-            <div className="flex flex-col w-1/2 justify-start gap-1">
+            <div className="flex w-1/2 flex-col justify-start gap-1">
               <p className="text-muted-foreground text-sm font-medium">
                 Participants
               </p>
@@ -188,13 +188,13 @@ const PoolsSection = () => {
   )
 
   return (
-    <div className="flex flex-col items-center justify-center py-16">
+    <div id="pools" className="flex flex-col items-center justify-center py-22">
       <div className="heading-tag text-foreground mb-3 flex items-center justify-center rounded-[32px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[2px]">
-        <div className="rounded-[32px] bg-[#150f21] px-6 py-3 text-sm font-medium">
+        <div className="text-primary-foreground w-full rounded-[32px] dark:bg-[#150f21] px-6 py-3 text-sm font-medium">
           Pools
         </div>
       </div>
-      <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
+      <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center px-4 sm:px-0">
         <h1 className="text-foreground mb-2 text-center text-[32px] font-bold">
           Diverse Investment Opportunities in One Place
         </h1>
@@ -205,7 +205,7 @@ const PoolsSection = () => {
       </div>
 
       {/* Infinite Slider Container */}
-      <div className="w-full overflow-hidden mb-10">
+      <div className="mb-10 w-full overflow-hidden">
         <div className="animate-infinite-scroll flex w-fit gap-5">
           {triplePoolsData.map((pool, index) => (
             <PoolCard key={`${pool.id}-${index}`} pool={pool} />

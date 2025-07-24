@@ -21,23 +21,42 @@ const Hero = () => {
       icon: '/avp.svg',
     },
   ]
+
   return (
-    <div className="flex min-h-screen items-center justify-center pb-20">
-      <div className="content mx-auto flex max-w-[1080px] flex-col items-center justify-center">
+    <div className="relative -mt-20 flex items-center justify-center overflow-hidden py-20">
+      {/* Vector decorations - positioned behind content */}
+      <img
+        src="/frame-2.svg"
+        alt=""
+        className="pointer-events-none absolute top-[-180px] left-0 z-0 h-[805px] w-[535px]"
+      />
+      <img
+        src="/frame-1.svg"
+        alt=""
+        className="pointer-events-none absolute top-[-180px] right-0 z-0 h-[805px] w-[535px]"
+      />
+
+      {/* Main content - positioned above vectors */}
+      <div className="content relative z-10 mx-auto flex max-w-[1080px] flex-col items-center justify-center px-4 sm:px-0">
         <img src="/eden-frame.svg" alt="Eden Finance" className="" />
         <div className="flex max-w-[641px] flex-col items-center">
-          <h1 className="text-foreground -mt-12 mb-4 text-center text-[64px] leading-[72px] font-bold">
+          <h1 className="text-foreground -mt-12 mb-4 text-center text-5xl font-bold md:text-[64px] md:leading-[72px]">
             Africa's Complete DeFi Ecosystem
           </h1>
-          <p className="text-muted-foreground text-center text-[20px] leading-[32px] font-medium">
+          <p className="text-muted-foreground text-center text-sm text-[20px] leading-[32px] font-medium sm:text-base">
             Lend, borrow, and invest across multiple pools from Nigerian money
             markets to government bonds and tokenized company shares.
           </p>
-          <div className="mt-8 flex items-center justify-center gap-6">
-            <button className="h-12 rounded-[32px] bg-[linear-gradient(90deg,_rgba(154,116,235,0.2)_0%,_rgba(96,68,156,0.2)_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90">
+          <div className="mt-6 flex w-full flex-col items-center justify-center gap-4 sm:mt-4 sm:flex-row sm:gap-6">
+            <button
+              className="h-12 w-full rounded-[32px] px-6 font-medium text-[#60449C] transition-colors duration-200 hover:opacity-90 sm:w-auto dark:text-white"
+              style={{
+                background: 'var(--button-access-bg)',
+              }}
+            >
               Access Lending
-            </button>{' '}
-            <button className="h-12 rounded-[32px] bg-[linear-gradient(90deg,_#9A74EB_0%,_#60449C_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90">
+            </button>
+            <button className="h-12 w-full rounded-[32px] bg-[linear-gradient(90deg,_#9A74EB_0%,_#60449C_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90 sm:w-auto">
               Explore Pools
             </button>
           </div>
@@ -48,7 +67,8 @@ const Hero = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="rounded-[16px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[1px]"
+              className="rounded-[16px] p-[1px]"
+              style={{ background: 'var(--primary-gradient)' }}
             >
               <div className="bg-background flex flex-col rounded-[16px] p-6">
                 <img
@@ -59,7 +79,7 @@ const Hero = () => {
                 <h3 className="text-muted-foreground mb-1 text-sm font-medium">
                   {feature.title}
                 </h3>
-                <p className="bg-[linear-gradient(91.54deg,_#FFFFFF_-30.84%,_#9A74EB_126.52%)] bg-clip-text text-[32px] font-bold text-transparent">
+                <p className="bg-[linear-gradient(91.54deg,_#000000_-30.84%,_#9A74EB_126.52%)] bg-clip-text text-[32px] font-bold text-transparent dark:bg-[linear-gradient(91.54deg,_#FFFFFF_-30.84%,_#9A74EB_126.52%)]">
                   {feature.description}
                 </p>
               </div>

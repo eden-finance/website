@@ -14,8 +14,11 @@ const Navbar = () => {
   ]
 
   return (
-    <div className="sticky top-4 z-50 mx-auto w-full max-w-[851px]  px-3">
-      <div className="rounded-[100px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[1px]">
+    <div className="sticky top-4 z-50 mx-auto w-full max-w-[851px] px-3">
+      <div
+        className="bg-primary-gradient rounded-[100px] p-[1px]"
+        style={{ background: 'var(--primary-gradient)' }}
+      >
         <nav className="bg-background flex h-[66px] items-center justify-between rounded-[100px] px-3">
           <div className="flex items-center">
             <img src="/eden-finance-logo.svg" alt="Eden Finance" />
