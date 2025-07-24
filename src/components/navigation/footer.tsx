@@ -1,21 +1,21 @@
 const Footer = () => {
   const footerLinks = [
-    { name: "About Eden", href: "#about" },
-    { name: "Documentation", href: "#services" },
-    { name: "Security & Audits", href: "#contact" },
-    { name: "Twitter · Discord · Telegram", href: "#privacy" },
-    { name: "Legacy & Privacy", href: "#terms" },
-  ];
+    { name: 'About Eden', href: '#about' },
+    { name: 'Documentation', href: '#services' },
+    { name: 'Security & Audits', href: '#contact' },
+    { name: 'Twitter · Discord · Telegram', href: '#privacy' },
+    { name: 'Legacy & Privacy', href: '#terms' },
+  ]
 
   return (
-    <footer className="w-full py-16 px-4">
-      <div className="max-w-[851px] mx-auto text-center">
-        <div className="flex flex-wrap justify-center items-center gap-10 mb-8">
+    <footer className="w-full px-4 pt-16">
+      <div className="mx-auto max-w-[851px] text-center">
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-10">
           {footerLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className="font-medium text-foreground hover:text-foreground transition-colors duration-200"
+              className="text-foreground hover:text-foreground font-medium transition-colors duration-200"
             >
               {link.name}
             </a>
@@ -31,17 +31,16 @@ const Footer = () => {
 
         {/* Logo */}
         <div className="flex justify-center">
-          <div className="text-6xl font-bold text-foreground">InvestCorp</div>
           {/* If you have an actual logo image, replace the div above with: */}
-          {/* <img 
-            src="/path-to-your-logo.png" 
-            alt="InvestCorp Logo" 
-            className="h-24 w-auto"
-          /> */}
+          <img
+            src="/eden-logo-footer.png"
+            alt="Eden Finance"
+            // className="h-24 w-auto"
+          />
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

@@ -90,13 +90,13 @@ const ProductsSection = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="mx-auto grid max-w-[1259px] grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-[1259px] grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
         {currentData.map((item, index) => (
           <div
             key={`${activeTab}-${index}`}
             className="rounded-[16px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-px"
           >
-            <div className="bg-background flex h-full max-w-[380px] flex-col items-start space-y-4 rounded-[16px] p-8">
+            <div className="bg-background flex h-full max-w-[420px] flex-col items-start space-y-4 rounded-[16px] p-8">
               <img src={item.icon} alt={item.title} />
               <h3 className="text-foreground text-xl leading-[28px] font-bold">
                 {item.title}

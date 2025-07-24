@@ -110,7 +110,7 @@ const PoolsSection = () => {
   const triplePoolsData = [...poolsData, ...poolsData, ...poolsData]
 
   const PoolCard = ({ pool }: { pool: PoolCardProps }) => (
-    <div className="pool-card bg-accent flex w-[410px] flex-shrink-0 flex-col rounded-[12px] px-6 py-10">
+    <div className="pool-card bg-accent flex w-[340px] sm:w-[410px] flex-shrink-0 flex-col rounded-[12px] px-6 py-10">
       <h1 className="text-foreground text-[24px] font-bold capitalize">
         {pool.title}
       </h1>
