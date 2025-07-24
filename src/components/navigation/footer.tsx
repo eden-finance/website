@@ -1,10 +1,10 @@
 const Footer = () => {
   const footerLinks = [
-    { name: 'About Eden', href: '#about' },
-    { name: 'Documentation', href: '#services' },
-    { name: 'Security & Audits', href: '#contact' },
-    { name: 'Twitter · Discord · Telegram', href: '#privacy' },
-    { name: 'Legacy & Privacy', href: '#terms' },
+    { name: 'About Eden', href: '#' },
+    { name: 'Documentation', href: '#' },
+    { name: 'Security & Audits', href: '#security' },
+    { name: 'Twitter · Discord · Telegram', href: '#' },
+    { name: 'Legacy & Privacy', href: '#' },
   ]
 
   return (

@@ -14,7 +14,7 @@ export function ThemeToggle() {
     <button
       onClick={handleClick}
       aria-label="Toggle theme"
-      className="bg-secondary mr-4 flex h-9 w-9 items-center justify-center rounded-[8px]"
+      className="bg-secondary mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-[8px]"
     >
       <img src="./theme-icon.svg" alt="" />
     </button>
