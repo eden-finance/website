@@ -48,8 +48,8 @@ const FAQs = () => {
   }
 
   return (
-    <div className="flex items-center justify-center px-4 py-12 sm:py-22 sm:px-0">
-      <div className="mx-auto mb-10 flex max-w-[800px] flex-col items-center justify-center px-4 sm:px-0">
+    <div className="flex items-center justify-center px-4 py-12 sm:px-0 sm:py-22">
+      <div className="mx-auto mb-10 flex max-w-[800px] flex-col items-center justify-center">
         <div className="mb-8 flex max-w-[488px] flex-col items-center justify-center">
           <h1 className="text-foreground mb-2 text-center text-[32px] font-bold">
             Frequently Asked Questions
@@ -70,12 +70,12 @@ const FAQs = () => {
                 onClick={() => toggleFAQ(index)}
                 className="hover:bg-accent flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-200"
               >
-                <span className="text-foreground text-base font-medium flex-1">
+                <span className="text-foreground flex-1 text-base font-medium">
                   {faq.question}
                 </span>
-                <div className="flex h-5 w-5 sm:h-6 sm:w-6 items-center justify-center rounded-full bg-[#9A74EB]">
+                <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#9A74EB] sm:h-6 sm:w-6">
                   <ChevronDown
-                    className={`h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0 text-white transition-transform duration-300 ease-in-out ${
+                    className={`h-3 w-3 flex-shrink-0 text-white transition-transform duration-300 ease-in-out sm:h-4 sm:w-4 ${
                       openIndex === index ? 'rotate-180' : 'rotate-0'
                     }`}
                   />
