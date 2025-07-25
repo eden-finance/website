@@ -10,6 +10,7 @@ const Footer = () => {
   return (
     <footer className="w-full px-4 pt-16 sm:px-0">
       <div className="mx-auto max-w-[851px] text-center">
+        
         <div className="mb-8 flex flex-wrap items-center justify-center gap-4 sm:gap-10 text-sm sm:text-base">
           {footerLinks.map((link) => (
             <a

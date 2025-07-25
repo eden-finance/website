@@ -37,7 +37,7 @@ const Hero = () => {
 
       {/* Main content - positioned above vectors */}
       <div className="content relative z-10 mx-auto flex max-w-[1080px] flex-col items-center justify-center px-4 pt-9 sm:px-0 sm:pt-4">
-        <img src="/eden-frame.svg" alt="Eden Finance" className="lg:mt-16" />
+        <img src="/eden-frame.svg" alt="Eden Finance" className="lg:mt-16 mt-12" />
         <div className="flex max-w-[641px] flex-col items-center">
           <h1 className="text-foreground -mt-18 mb-4 text-center text-5xl font-bold md:text-[64px] md:leading-[72px]">
             Africa&apos;s Complete DeFi Ecosystem
@@ -46,6 +46,7 @@ const Hero = () => {
             Lend, borrow, and invest across multiple pools from Nigerian money
             markets to government bonds and tokenized company shares.
           </p>
+          
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:mt-4 sm:gap-6 md:flex-row">
             <button
               className="h-12 w-full rounded-[32px] px-6 font-medium text-[#60449C] transition-colors duration-200 hover:opacity-90 sm:w-auto dark:text-white"
