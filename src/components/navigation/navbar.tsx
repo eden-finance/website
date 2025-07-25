@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '../miscellaneous/toggle'
 import Link from 'next/link'
@@ -13,6 +13,25 @@ const Navbar = () => {
     { name: 'Docs', href: 'https://docs.edenfinance.org' },
     { name: 'Github', href: 'https://github.com/eden-finance' },
   ]
+
+  // Close menu on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMenuOpen) {
+        setIsMenuOpen(false)
+      }
+    }
+
+    // Add scroll event listener when menu is open
+    if (isMenuOpen) {
+      window.addEventListener('scroll', handleScroll, { passive: true })
+    }
+
+    // Cleanup function to remove event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [isMenuOpen])
 
   return (
     <div className="sticky top-4 z-50 mx-auto h-0 w-full max-w-[851px] rounded-[100px] bg-red-500 px-4">
@@ -41,10 +60,12 @@ const Navbar = () => {
 
           <div className="flex items-center space-x-1 sm:space-x-2">
             <ThemeToggle />
+            {/* Launch App button - hidden on mobile */}
             <Link
               href="https://vest.edenfinance.org"
               target="_blank"
               rel="noopener noreferrer"
+              className="hidden md:block"
             >
               <button
                 className="rounded-[32px] px-4 py-3 text-sm font-medium text-white transition-all duration-300 ease-in-out hover:scale-105 hover:opacity-90 hover:shadow-lg sm:px-6"
@@ -87,14 +108,14 @@ const Navbar = () => {
             : 'pointer-events-none -translate-y-2 scale-y-0 opacity-0'
         }`}
       >
-        <div className="bg-card/95 border-border mt-2 overflow-hidden rounded-2xl border shadow-lg backdrop-blur-md">
+        <div className="bg-card/90 border-border mt-2 overflow-hidden rounded-2xl border shadow-lg backdrop-blur-md">
           <div className="space-y-1 p-4">
             {navLinks.map((link, index) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-muted-foreground hover:text-foreground hover:bg-accent group relative block transform rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-sm"
+                className="text-muted-foreground hover:text-foreground hover:bg-background group relative block transform rounded-lg px-4 py-3 text-sm font-medium transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-sm"
                 style={{
                   transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms',
                 }}
@@ -103,6 +124,30 @@ const Navbar = () => {
                 <span className="absolute bottom-2 left-4 h-0.5 w-0 bg-gradient-to-r from-purple-400 to-purple-600 transition-all duration-300 ease-in-out group-hover:w-[calc(100%-2rem)]"></span>
               </a>
             ))}
+
+            {/* Launch App button in mobile menu */}
+            <Link
+              href="https://vest.edenfinance.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="block transform transition-all duration-300 ease-in-out hover:scale-105"
+              style={{
+                transitionDelay: isMenuOpen
+                  ? `${navLinks.length * 50}ms`
+                  : '0ms',
+              }}
+            >
+              <button
+                className="w-full rounded-[32px] px-4 py-3 text-sm font-medium text-white transition-all duration-300 ease-in-out hover:opacity-90 hover:shadow-lg"
+                style={{
+                  background:
+                    'linear-gradient(90deg, #9A74EB 0%, #60449C 100%)',
+                }}
+              >
+                Launch App
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -110,8 +110,8 @@ const PoolsSection = () => {
   const triplePoolsData = [...poolsData, ...poolsData, ...poolsData]
 
   const PoolCard = ({ pool }: { pool: PoolCardProps }) => (
-    <div className="pool-card bg-accent flex w-[340px] flex-shrink-0 flex-col rounded-[12px] px-6 py-10 sm:w-[410px]">
-      <h1 className="text-foreground text-[24px] font-bold capitalize">
+    <div className="pool-card bg-accent flex w-[340px] flex-shrink-0 flex-col rounded-[12px] px-6 py-6 sm:w-[410px] sm:py-10">
+      <h1 className="text-foreground text-[20px] font-bold capitalize sm:text-[24px]">
         {pool.title}
       </h1>
       <p className="text-muted-foreground max-w-[331px] text-sm font-medium">
@@ -161,7 +161,7 @@ const PoolsSection = () => {
               <p className="text-muted-foreground text-sm font-medium">
                 Lockdown Duration
               </p>
-              <p className="text-foreground font-bold">
+              <p className="text-foreground text-sm font-bold">
                 {pool.lockdownDuration}
               </p>
             </div>
@@ -188,9 +188,12 @@ const PoolsSection = () => {
   )
 
   return (
-    <div id="pools" className="flex flex-col items-center justify-center py-22">
+    <div
+      id="pools"
+      className="flex flex-col items-center justify-center py-12 sm:py-22"
+    >
       <div className="heading-tag text-foreground mb-3 flex items-center justify-center rounded-[32px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[2px]">
-        <div className="text-primary-foreground w-full rounded-[32px] dark:bg-[#150f21] px-6 py-3 text-sm font-medium">
+        <div className="text-primary-foreground w-full rounded-[32px] px-6 py-3 text-sm font-medium dark:bg-[#150f21]">
           Pools
         </div>
       </div>

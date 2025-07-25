@@ -52,7 +52,7 @@ const ProductsSection = () => {
   return (
     <div
       id="lending"
-      className="flex flex-col items-center justify-center px-4 py-22 sm:px-0"
+      className="flex flex-col items-center justify-center px-4 py-12 sm:px-0 sm:py-22"
     >
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
         <h1 className="text-foreground mb-2 max-w-[365px] text-center text-[32px] font-bold">

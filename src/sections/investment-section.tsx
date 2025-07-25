@@ -22,7 +22,10 @@ const Investment = () => {
     },
   ]
   return (
-    <div id="security" className="mx-auto max-w-[1259px] px-4 py-22 sm:px-0">
+    <div
+      id="security"
+      className="mx-auto max-w-[1259px] px-4 py-12 sm:px-0 sm:py-22"
+    >
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
         <h1 className="text-foreground mb-2 text-center text-2xl font-bold md:text-[32px]">
           Simple, Secure, and Rewarding Investments, Built for You

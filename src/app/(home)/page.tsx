@@ -4,6 +4,8 @@ import ProductsSection from '~/sections/products-section'
 import CTA from '~/sections/cta-section'
 import HowItWorks from '~/sections/how-it-works-section'
 import Investment from '~/sections/investment-section'
+import FAQS from '~/sections/faqs-section'
+
 const Page = () => {
   return (
     <>
@@ -13,6 +15,7 @@ const Page = () => {
       <CTA />
       <HowItWorks />
       <Investment />
+      <FAQS />
     </>
   )
 }
