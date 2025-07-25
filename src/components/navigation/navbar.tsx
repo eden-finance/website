@@ -8,10 +8,10 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const navLinks = [
-    { name: 'Pools', href: '#pools' },
-    { name: 'Lending', href: '#lending' },
-    { name: 'Docs', href: '#docs' },
-    { name: 'Security', href: '#security' },
+    { name: 'Invest', href: 'https://vest.edenfinance.org' },
+    { name: 'Lending', href: 'https://app.edenfinance.org' },
+    { name: 'Docs', href: 'https://docs.edenfinance.org' },
+    { name: 'Github', href: 'https://github.com/eden-finance' },
   ]
 
   return (
@@ -42,7 +42,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-1 sm:space-x-2">
             <ThemeToggle />
             <Link
-              href="https://app.edenfinance.org"
+              href="https://vest.edenfinance.org"
               target="_blank"
               rel="noopener noreferrer"
             >

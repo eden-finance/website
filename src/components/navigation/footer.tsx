@@ -1,9 +1,9 @@
 const Footer = () => {
   const footerLinks = [
     { name: 'About Eden', href: '#' },
-    { name: 'Documentation', href: '#' },
-    { name: 'Security & Audits', href: '#security' },
-    { name: 'Twitter · Discord · Telegram', href: '#' },
+    { name: 'Documentation', href: 'https://docs.edenfinance.org' },
+    { name: 'Github', href: 'https://github.com/eden-finance' },
+    { name: 'X', href: 'https://x.com/0xedenfi' },
     { name: 'Legacy & Privacy', href: '#' },
   ]
 
@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="mb-12">
           <p className="text-muted-foreground font-medium">
             © 2025 Eden Finance. All rights reserved <br />
-            Built on AssetChain • Powered by cNGN
+        
           </p>
         </div>
         <div className="flex justify-center">
