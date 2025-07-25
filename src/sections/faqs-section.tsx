@@ -55,7 +55,7 @@ const FAQs = () => {
             Frequently Asked Questions
           </h1>
           <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">
-            We've put together answers to the most common questions to help you
+            We&apos;ve put together answers to the most common questions to help you
             make the most of your private inbox.
           </p>
         </div>
