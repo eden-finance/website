@@ -2,10 +2,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-*{
-  font-family: 'Space Grotesk', sans-serif;
-  scroll-behavior: smooth;
-}
 
 @custom-variant dark (&:is(.dark *));
 
@@ -75,7 +71,7 @@
   --popover: #F3F3F3;
   --popover-foreground: oklch(0.145 0 0);
   --button-access-bg: #ECECEC;
-  --primary: oklch(0.205 0 0);
+  --primary: #F3F3F3;
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #E8E8E8;
   --secondary-foreground: oklch(0.205 0 0);
@@ -168,6 +164,8 @@
   * {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--scrollbar-thumb)) hsl(var(--scrollbar-track));
+    font-family: 'Space Grotesk', sans-serif;
+    scroll-behavior: smooth;
   }
 }
 
@@ -183,6 +181,7 @@
 
 ::view-transition-new(root) {
   z-index: 1;
+   animation: reveal 1s ease-in-out forwards;
 }
 
 @keyframes reveal {
@@ -196,9 +195,6 @@
   }
 }
 
-::view-transition-new(root) {
-  animation: reveal 1s ease-in-out forwards;
-}
 
 .card {
   .card-border,

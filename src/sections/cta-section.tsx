@@ -1,69 +1,76 @@
 import React from 'react'
+import Link from 'next/link'
+import { retrive_theme } from '~/actions/theme'
 
-const CTA = () => {
+const CTA = async () => {
+  const theme = await retrive_theme()
+
+  // Determine if we should use light mode images
+  const isLightMode =
+    theme === 'light' ||
+    (theme === 'system' &&
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-color-scheme: light)').matches)
+
+  // Choose images based on theme
+  const dashboardImage = isLightMode ? '/dashboard-light.png' : '/dashboard.png'
+  const ellipseImage = isLightMode ? '/ellipse-light.svg' : '/ellipse.svg'
+
   return (
-    <div className="flex items-center justify-center py-22 px-4 sm:px-0">
-      <div className="relative mx-auto w-full max-w-7xl">
-        {/* Main Gradient Container */}
+    <div className="flex items-center justify-center px-4 py-12 sm:px-0 sm:py-22">
+      <div className="relative mx-auto w-[95%] max-w-7xl">
         <div
-          className="relative overflow-hidden rounded-[24px]"
+          className="relative h-[800px] w-full overflow-hidden rounded-[24px] sm:h-[700px] md:h-[550px]"
           style={{
             background: 'linear-gradient(90deg, #8148FB 0%, #5734A4 100%)',
-            height: '485px',
           }}
         >
-          <div className="absolute inset-0 z-5 flex items-center justify-center">
+          <div className="absolute inset-0 -top-100 z-5 flex items-center justify-center sm:top-20">
             <img
-              src="/dashboard.png"
+              src={dashboardImage}
               alt="Eden Finance Background"
-              className="h-[390px] w-auto object-contain"
+              className="h-[200px] w-[95%] max-w-[1200px] sm:h-[480px]"
             />
           </div>
-
-          {/* Half Ellipse Overlay */}
-          {/* <div className="absolute inset-0 flex items-center justify-center">
-            <div
-              className="relative flex flex-col items-center justify-center px-12 py-16"
-              style={{
-                width: 'min(90vw, 800px)',
-                height: '280px',
-                background: '#090909',
-                borderRadius: '400px 400px 0 0',
-                border: '1px solid transparent',
-                backgroundImage: `
-                  radial-gradient(42.68% 100% at 50.12% 0%, #9A74EB 0%, #161616 100%),
-                  linear-gradient(#090909, #090909)
-                `,
-                backgroundOrigin: 'border-box',
-                backgroundClip: 'content-box, border-box',
-              }}
-            >
-              <div className="flex max-w-2xl flex-col items-center space-y-6 text-center">
-                <div className="mb-2">
-                  <img
-                    src="/eden-frame.svg"
-                    alt="Eden Finance"
-                    className="h-16 w-auto"
-                  />
-                </div>
-                <h2 className="text-3xl leading-tight font-bold text-white lg:text-4xl">
-                  Start Building Your DeFi Portfolio Today
-                </h2>
-                <p className="max-w-xl text-lg leading-relaxed font-medium text-gray-300">
-                  Whether you want to lend, borrow, or invest—Eden Finance gives
-                  you everything you need.
-                </p>
-                <div className="flex flex-col gap-4 pt-4 sm:flex-row">
-                  <button className="rounded-[12px] bg-white px-8 py-4 font-bold text-[#8148FB] shadow-lg transition-all duration-200 hover:scale-105 hover:bg-gray-100">
-                    Access Lending
-                  </button>
-                  <button className="rounded-[12px] border-2 border-white bg-transparent px-8 py-4 font-bold text-white transition-all duration-200 hover:scale-105 hover:bg-white hover:text-[#8148FB]">
-                    Launch App
-                  </button>
-                </div>
-              </div>
+          <div className="absolute inset-0 top-72 z-5 flex items-center justify-center">
+            <img
+              src={ellipseImage}
+              alt="eden finance"
+              className="max-w-[1200px]"
+            />
+          </div>
+          <div className="absolute top-[calc(50%+100px)] left-1/2 z-10 mx-auto flex max-w-[434px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center text-center md:top-[calc(50%+72px)]">
+            <img
+              src="/eden-frame.svg"
+              alt="Eden Finance"
+              className="-mt-14 h-[140px] w-[240px]"
+            />
+            <h2 className="text-foreground -mt-8 text-[28px] font-bold sm:text-[32px]">
+              Start Building Your DeFi Portfolio Today
+            </h2>
+            <p className="text-muted-foreground mb-4 text-sm font-bold">
+              Whether you want to lend, borrow, or invest—Eden Finance gives you
+              everything you need.
+            </p>
+            <div className="flex w-full flex-col items-center justify-center gap-4 sm:mt-4 md:flex-row">
+              <button
+                className="h-12 w-full rounded-[32px] px-6 font-medium text-[#60449C] transition-colors duration-200 hover:opacity-90 sm:w-1/2 dark:text-white"
+                style={{
+                  background: 'var(--button-access-bg)',
+                }}
+              >
+                Access Lending
+              </button>
+              <Link
+                href="https://vest.edenfinance.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-12 w-full items-center justify-center rounded-[32px] bg-[linear-gradient(90deg,_#9A74EB_0%,_#60449C_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90 sm:w-1/2"
+              >
+                Launch App
+              </Link>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

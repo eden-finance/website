@@ -76,7 +76,7 @@ const HowItWorks = () => {
   return (
     <div
       id="docs"
-      className="flex flex-col items-center justify-center px-4 py-22 sm:px-0"
+      className="flex flex-col items-center justify-center px-4 py-12 sm:py-22 sm:px-0"
     >
       <div className="heading-tag text-foreground mb-3 flex items-center justify-center rounded-[32px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[2px]">
         <div className="text-primary-foreground rounded-[32px] px-6 py-3 text-sm font-medium dark:bg-[#150f21]">
