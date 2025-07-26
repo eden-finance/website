@@ -58,6 +58,7 @@ const Hero = () => {
             Lend, borrow, and invest across multiple pools from Nigerian money
             markets to government bonds and tokenized company shares.
           </p>
+          
           <div className="mt-10 flex w-full flex-col items-center justify-center gap-4 sm:mt-4 sm:gap-6 md:flex-row">
             <button
               className="h-12 w-full rounded-[32px] px-6 font-medium text-[#60449C] transition-colors duration-200 hover:opacity-90 sm:w-auto dark:text-white"
