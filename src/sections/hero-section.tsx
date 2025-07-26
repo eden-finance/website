@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const Hero = () => {
   const features = [
     {
@@ -24,25 +26,35 @@ const Hero = () => {
 
   return (
     <div className="relative -mt-20 flex items-center justify-center overflow-hidden py-20">
-      <img
+      <Image
         src="/frame-2.svg"
         alt=""
-        className="pointer-events-none absolute top-[-130px] -left-40 sm:left-0 z-0 h-[800px] sm:h-[1100px] w-[900px]"
+        width={900}
+        height={1100}
+        className="pointer-events-none absolute top-[-130px] -left-40 z-0 h-[800px] w-[900px] sm:left-0 sm:h-[1100px]"
       />
-      <img
+      <Image
         src="/frame-1.svg"
         alt=""
-        className="pointer-events-none absolute top-[-130px] -right-40 sm:right-0 z-0 h-[800px] sm:h-[1100px] w-[900px]"
+        width={900}
+        height={1100}
+        className="pointer-events-none absolute top-[-130px] -right-40 z-0 h-[800px] w-[900px] sm:right-0 sm:h-[1100px]"
       />
 
       {/* Main content - positioned above vectors */}
       <div className="content relative z-10 mx-auto flex max-w-[1080px] flex-col items-center justify-center px-4 pt-9 sm:px-0 sm:pt-4">
-        <img src="/eden-frame.svg" alt="Eden Finance" className="lg:mt-16 mt-12" />
+        <Image
+          src="/eden-frame.svg"
+          alt="Eden Finance"
+          width={350}
+          height={180}
+          className="mt-10 lg:mt-16"
+        />
         <div className="flex max-w-[641px] flex-col items-center">
-          <h1 className="text-foreground -mt-18 mb-4 text-center text-5xl font-bold md:text-[64px] md:leading-[72px]">
+          <h1 className="text-foreground -mt-8 sm:-mt-10 mb-4 text-center text-5xl font-bold md:text-[64px] md:leading-[72px]">
             Africa&apos;s Complete DeFi Ecosystem
           </h1>
-          <p className="text-muted-foreground text-center text-sm text-[20px] leading-[32px] font-medium sm:text-base">
+          <p className="text-muted-foreground text-center text-base leading-[32px] font-medium">
             Lend, borrow, and invest across multiple pools from Nigerian money
             markets to government bonds and tokenized company shares.
           </p>
@@ -70,10 +82,12 @@ const Hero = () => {
               className="h-full rounded-[16px] p-[1px]"
               style={{ background: 'var(--primary-gradient)' }}
             >
-              <div className="bg-background flex h-full flex-col rounded-[16px] p-4 sm:p-6">
-                <img
+              <div className="dark:bg-background flex h-full flex-col rounded-[16px] bg-[#F7F7f7] p-4 sm:p-6">
+                <Image
                   src={feature.icon}
                   alt={feature.title}
+                  width={48}
+                  height={48}
                   className="mb-4 h-8 w-8 sm:mb-6 sm:h-12 sm:w-12"
                 />
                 <h3 className="text-muted-foreground mb-1 text-xs font-medium sm:text-sm">

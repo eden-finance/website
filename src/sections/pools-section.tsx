@@ -198,7 +198,7 @@ const PoolsSection = () => {
         </div>
       </div>
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center px-4 sm:px-0">
-        <h1 className="text-foreground mb-2 text-center text-[32px] font-bold">
+        <h1 className="text-foreground mb-2 text-center text-[24px] sm:text-[32px] font-bold">
           Diverse Investment Opportunities in One Place
         </h1>
         <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">

@@ -1,5 +1,6 @@
 'use client'
 import React, { useRef, useState } from 'react'
+import Image from 'next/image'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -76,7 +77,7 @@ const HowItWorks = () => {
   return (
     <div
       id="docs"
-      className="flex flex-col items-center justify-center px-4 py-12 sm:py-22 sm:px-0"
+      className="flex flex-col items-center justify-center px-4 py-12 sm:px-0 sm:py-22"
     >
       <div className="heading-tag text-foreground mb-3 flex items-center justify-center rounded-[32px] bg-[radial-gradient(42.68%_100%_at_50.12%_0%,#9A74EB_0%,#161616_100%)] p-[2px]">
         <div className="text-primary-foreground rounded-[32px] px-6 py-3 text-sm font-medium dark:bg-[#150f21]">
@@ -84,7 +85,7 @@ const HowItWorks = () => {
         </div>
       </div>
       <div className="mx-auto mb-14 flex max-w-[488px] flex-col items-center justify-center">
-        <h1 className="text-foreground mb-2 text-center text-[32px] font-bold">
+        <h1 className="text-foreground mb-2 text-center text-[24px] sm:text-[32px]font-bold">
           How Eden finance Makes Investing Effortless
         </h1>
         <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">
@@ -128,10 +129,12 @@ const HowItWorks = () => {
                   >
                     {item.description}
                   </p>
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.title}
-                    className={`h-[320px] w-full object-cover  ${
+                    width={400}
+                    height={320}
+                    className={`h-[280px] w-full object-cover sm:h-[320px] ${
                       isActiveCard(index) ? '' : 'grayscale'
                     }`}
                   />

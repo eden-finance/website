@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { retrive_theme } from '~/actions/theme'
 
 const CTA = async () => {
@@ -20,32 +21,38 @@ const CTA = async () => {
     <div className="flex items-center justify-center px-4 py-12 sm:px-0 sm:py-22">
       <div className="relative mx-auto w-[95%] max-w-7xl">
         <div
-          className="relative h-[800px] w-full overflow-hidden rounded-[24px] sm:h-[700px] md:h-[550px]"
+          className="relative h-[600px] w-full overflow-hidden rounded-[24px] sm:h-[700px] md:h-[550px]"
           style={{
             background: 'linear-gradient(90deg, #8148FB 0%, #5734A4 100%)',
           }}
         >
-          <div className="absolute inset-0 -top-100 z-5 flex items-center justify-center sm:top-20">
-            <img
+          <div className="absolute inset-0 -top-94 z-5 flex items-center justify-center sm:-top-45 md:top-20">
+            <Image
               src={dashboardImage}
               alt="Eden Finance Background"
-              className="h-[200px] w-[95%] max-w-[1200px] sm:h-[480px]"
+              width={1200}
+              height={480}
+              className="h-[180px] w-[90%] max-w-[1200px] sm:h-[510px] sm:w-[95%] md:h-[480px]"
             />
           </div>
           <div className="absolute inset-0 top-72 z-5 flex items-center justify-center">
-            <img
+            <Image
               src={ellipseImage}
               alt="eden finance"
+              width={1200}
+              height={400}
               className="max-w-[1200px]"
             />
           </div>
           <div className="absolute top-[calc(50%+100px)] left-1/2 z-10 mx-auto flex max-w-[434px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center text-center md:top-[calc(50%+72px)]">
-            <img
+            <Image
               src="/eden-frame.svg"
               alt="Eden Finance"
+              width={240}
+              height={140}
               className="-mt-14 h-[140px] w-[240px]"
             />
-            <h2 className="text-foreground -mt-8 text-[28px] font-bold sm:text-[32px]">
+            <h2 className="text-foreground -mt-8 min-w-[280px] text-[24px] font-bold sm:text-[32px]">
               Start Building Your DeFi Portfolio Today
             </h2>
             <p className="text-muted-foreground mb-4 text-sm font-bold">

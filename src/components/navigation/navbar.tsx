@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 import { ThemeToggle } from '../miscellaneous/toggle'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -41,7 +42,12 @@ const Navbar = () => {
       >
         <nav className="bg-background flex h-[66px] items-center justify-between rounded-[100px] px-3">
           <div className="flex items-center">
-            <img src="/eden-finance-logo.svg" alt="Eden Finance" />
+            <Image
+              src="/eden-finance-logo.svg"
+              alt="Eden Finance"
+              width={108}
+              height={38}
+            />
           </div>
 
           {/* Desktop Navigation */}
