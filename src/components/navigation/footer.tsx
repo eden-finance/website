@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 const Footer = () => {
   const footerLinks = [
     { name: 'About Eden', href: '#' },
@@ -10,7 +12,7 @@ const Footer = () => {
   return (
     <footer className="w-full px-4 pt-16 sm:px-0">
       <div className="mx-auto max-w-[851px] text-center">
-        <div className="mb-8 flex flex-wrap items-center justify-center gap-4 sm:gap-10 text-sm sm:text-base">
+        <div className="mb-8 flex flex-wrap items-center justify-center gap-4 text-sm sm:gap-10 sm:text-base">
           {footerLinks.map((link) => (
             <a
               key={link.name}
@@ -28,14 +30,18 @@ const Footer = () => {
           </p>
         </div>
         <div className="flex justify-center">
-          <img
+          <Image
             src="/eden-logo-footer.png"
             alt="Eden Finance"
+            width={663}
+            height={233}
             className="hidden dark:block"
           />
-          <img
+          <Image
             src="/eden-logo-footer-light.png"
             alt="Eden Finance"
+            width={663}
+            height={233}
             className="block dark:hidden"
           />
         </div>

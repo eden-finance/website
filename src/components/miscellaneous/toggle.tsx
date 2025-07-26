@@ -1,6 +1,7 @@
 'use client'
 
 import type React from 'react'
+import Image from 'next/image'
 import { useTheme } from '~/provider/theme-provider'
 
 export function ThemeToggle() {
@@ -16,7 +17,12 @@ export function ThemeToggle() {
       aria-label="Toggle theme"
       className="bg-secondary mr-2 sm:mr-4 flex h-9 w-9 items-center justify-center rounded-[8px]"
     >
-      <img src="./theme-icon.svg" alt="" />
+      <Image 
+        src="/theme-icon.svg" 
+        alt="Theme toggle icon" 
+        width={20} 
+        height={20} 
+      />
     </button>
   )
 }

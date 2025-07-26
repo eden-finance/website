@@ -1,5 +1,6 @@
 'use client'
 import React, { useState } from 'react'
+import Image from 'next/image'
 
 const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState('lending')
@@ -55,7 +56,7 @@ const ProductsSection = () => {
       className="flex flex-col items-center justify-center px-4 py-12 sm:px-0 sm:py-22"
     >
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
-        <h1 className="text-foreground mb-2 max-w-[365px] text-center text-[32px] font-bold">
+        <h1 className="text-foreground mb-2 max-w-[365px] text-center text-[24px] font-bold sm:text-[32px]">
           One Ecosystem, Two Powerful Products
         </h1>
         <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">
@@ -65,7 +66,7 @@ const ProductsSection = () => {
       </div>
 
       {/* Tab Navigation */}
-      <div className="mb-12 flex items-center justify-center">
+      <div className="mb-4 sm:mb-12 flex items-center justify-center">
         <div
           className="rounded-[12px] p-px"
           style={{ background: 'var(--primary-gradient)' }}
@@ -76,7 +77,7 @@ const ProductsSection = () => {
               className={`rounded-[8px] px-6 py-3 text-sm font-medium transition-all duration-200 ${
                 activeTab === 'lending'
                   ? 'bg-foreground/10 text-foreground'
-                  : 'text-foreground/20 hover:text-foreground'
+                  : 'text-foreground/70 hover:text-foreground'
               }`}
             >
               Lending & Borrowing
@@ -86,7 +87,7 @@ const ProductsSection = () => {
               className={`rounded-[8px] px-6 py-3 text-sm font-medium transition-all duration-200 ${
                 activeTab === 'multipool'
                   ? 'bg-foreground/10 text-foreground'
-                  : 'text-foreground/20 hover:text-foreground'
+                  : 'text-foreground/70 hover:text-foreground'
               }`}
             >
               Multi-pool Investment
@@ -103,8 +104,8 @@ const ProductsSection = () => {
             className="w-full rounded-[16px] p-px"
             style={{ background: 'var(--primary-gradient)' }}
           >
-            <div className="bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-8">
-              <img src={item.icon} alt={item.title} />
+            <div className="bg-primary dark:bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-8">
+              <Image src={item.icon} alt={item.title} width={40} height={40} />
               <h3 className="text-foreground text-xl leading-[28px] font-bold">
                 {item.title}
               </h3>

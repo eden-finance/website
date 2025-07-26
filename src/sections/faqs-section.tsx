@@ -51,21 +51,18 @@ const FAQs = () => {
     <div className="flex items-center justify-center px-4 py-12 sm:px-0 sm:py-22">
       <div className="mx-auto mb-10 flex max-w-[800px] flex-col items-center justify-center">
         <div className="mb-8 flex max-w-[488px] flex-col items-center justify-center">
-          <h1 className="text-foreground mb-2 text-center text-[32px] font-bold">
+          <h1 className="text-foreground mb-2 text-center text-[24px] sm:text-[32px] font-bold">
             Frequently Asked Questions
           </h1>
           <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">
-            We&apos;ve put together answers to the most common questions to help you
-            make the most of your private inbox.
+            We&apos;ve put together answers to the most common questions to help
+            you make the most of your private inbox.
           </p>
         </div>
 
         <div className="w-full max-w-[700px] space-y-4">
           {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="border-border bg-primary overflow-hidden rounded-lg border"
-            >
+            <div key={index} className="bg-primary overflow-hidden rounded-lg">
               <button
                 onClick={() => toggleFAQ(index)}
                 className="hover:bg-accent flex w-full items-center justify-between px-6 py-5 text-left transition-colors duration-200"

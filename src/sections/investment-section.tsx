@@ -1,3 +1,5 @@
+import Link from 'next/link'
+import Image from 'next/image'
 import React from 'react'
 
 const Investment = () => {
@@ -27,7 +29,7 @@ const Investment = () => {
       className="mx-auto max-w-[1259px] px-4 py-12 sm:px-0 sm:py-22"
     >
       <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
-        <h1 className="text-foreground mb-2 text-center text-2xl font-bold md:text-[32px]">
+        <h1 className="text-foreground mb-2 text-center text-[24px] font-bold sm:text-[32px]">
           Simple, Secure, and Rewarding Investments, Built for You
         </h1>
         <p className="text-muted-foreground mb-3 text-center text-sm leading-[20px] font-medium">
@@ -43,7 +45,7 @@ const Investment = () => {
             style={{ background: 'var(--primary-gradient)' }}
           >
             <div className="bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-6 md:p-8">
-              <img src={item.icon} alt={item.title} />
+              <Image src={item.icon} alt={item.title} width={48} height={48} />
               <h3 className="text-foreground text-lg leading-[28px] font-bold md:text-xl">
                 {item.title}
               </h3>
@@ -56,7 +58,7 @@ const Investment = () => {
       </div>
       <div className="mt-10 flex flex-col lg:flex-row lg:items-start lg:justify-between">
         <div className="bg-background flex max-w-[420px] flex-col items-start space-y-4 rounded-[16px] p-6 md:p-8">
-          <img src={'/leaf.svg'} alt={'DeFi'} />
+          <Image src={'/leaf.svg'} alt={'DeFi'} width={48} height={48} />
           <h3 className="text-foreground text-lg leading-[28px] font-bold md:text-xl">
             Complete DeFi Suite
           </h3>
@@ -67,9 +69,11 @@ const Investment = () => {
         </div>
 
         <div className="mt-8 flex flex-col items-center lg:mt-0 lg:flex-row lg:items-end">
-          <img
+          <Image
             src={'/eden-cta.png'}
             alt={'Eden Finance'}
+            width={400}
+            height={388}
             className="h-[250px] w-auto md:h-[300px] lg:h-[388px]"
           />
           <div className="mt-6 flex max-w-[440px] flex-col items-center space-y-4 lg:mt-0 lg:ml-6 lg:items-start lg:justify-end lg:pb-8">
@@ -78,9 +82,15 @@ const Investment = () => {
                 Designed to help you maximize returns while maintaining full
                 transparency and security at every step
               </p>
-              <button className="h-12 rounded-[32px] bg-[linear-gradient(90deg,_#9A74EB_0%,_#60449C_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90">
-                Start Investing
-              </button>
+              <Link
+                href="https://vest.edenfinance.org"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="h-12 rounded-[32px] bg-[linear-gradient(90deg,_#9A74EB_0%,_#60449C_100%)] px-6 font-medium text-white transition-colors duration-200 hover:opacity-90">
+                  Start Investing
+                </button>
+              </Link>
             </div>
           </div>
         </div>
