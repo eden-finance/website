@@ -6,7 +6,7 @@ import { retrive_theme } from '~/actions/theme'
 
 export const metadata: Metadata = {
   title: 'Eden Finance | Africa\'s Premier DeFi Platform',
-  description: 'Trade, lend & stake on Eden Finance - Africa\'s leading DeFi platform built on AssetChain. Secure yields, transparent transactions, low fees. Start earning today.',
+  description: 'Lend & Borrow, Stake on Eden Finance on Eden Finance - Africa\'s leading DeFi platform built on AssetChain. Secure yields, transparent transactions, low fees. Start earning today.',
   keywords: [
     'DeFi Africa',
     'AssetChain DeFi',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Eden Finance | Africa\'s Premier DeFi Platform',
-    description: 'Trade, lend & stake on Eden Finance - Africa\'s leading DeFi platform built on AssetChain. Secure yields, transparent transactions.',
+    description: 'Lend & Borrow, Stake on Eden Finance - Africa\'s leading DeFi platform built on AssetChain.',
     url: 'https://edenfinance.org',
     siteName: 'Eden Finance',
     images: [
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Eden Finance | Africa\'s Premier DeFi Platform',
-    description: 'Trade, lend & stake on Eden Finance - Africa\'s leading DeFi platform built on AssetChain.',
+    description: 'Lend & Borrow, Stake on Eden Finance - Africa\'s leading DeFi platform built on AssetChain.',
     images: ['/twitter-image.jpg'], // 1200x600 image
     creator: '@0xedenfi', 
   },
