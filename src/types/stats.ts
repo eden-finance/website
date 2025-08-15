@@ -1,4 +1,4 @@
-interface ApiResponse {
+export interface ApiResponse {
   data: {
     tvl_wei: string
     net_flows: {
@@ -15,7 +15,7 @@ interface ApiResponse {
   status: boolean
 }
 
-interface FeatureData {
+export interface FeatureData {
   title: string
   description: string
   icon: string

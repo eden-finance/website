@@ -232,7 +232,6 @@ function transformPoolData(pool: Pool): PoolCardProps {
 }
 
 async function fetchPoolsData(): Promise<PoolCardProps[] | null> {
-  try {
     const baseUrl = process.env.EDEN_BASE_URL || 'https://api.edenfinance.org/api/v1'
     const url = `${baseUrl}/pools`
     
@@ -257,9 +256,7 @@ async function fetchPoolsData(): Promise<PoolCardProps[] | null> {
     }
     
     return data.data.slice(0, 5).map(transformPoolData)
-  } catch (error) {
-    return null
-  }
+ 
 }
 
 

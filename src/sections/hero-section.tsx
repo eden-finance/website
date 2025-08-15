@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { formatNumber, weiToNumber } from '~/lib/utils'
+import { ApiResponse, FeatureData } from '~/types/stats'
 
 async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
   try {
