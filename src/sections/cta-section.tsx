@@ -60,14 +60,22 @@ const CTA = async () => {
               everything you need.
             </p>
             <div className="flex w-full flex-col items-center justify-center gap-4 sm:mt-4 md:flex-row">
-              <button
+              <Link
+                href="https://app.edenfinance.org"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="h-12 w-full rounded-[32px] px-6 font-medium text-[#60449C] transition-colors duration-200 hover:opacity-90 sm:w-1/2 dark:text-white"
-                style={{
-                  background: 'var(--button-access-bg)',
-                }}
               >
-                Access Lending
-              </button>
+                <button
+                  className="h-full w-full rounded-[32px]"
+                  style={{
+                    background: 'var(--button-access-bg)',
+                  }}
+                >
+                  Access Lending
+                </button>
+              </Link>
+
               <Link
                 href="https://vest.edenfinance.org"
                 target="_blank"

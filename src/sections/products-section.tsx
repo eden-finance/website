@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState('lending')
@@ -50,12 +51,41 @@ const ProductsSection = () => {
   const currentData =
     activeTab === 'lending' ? lendingBorrowingData : multiPoolData
 
+  // Animation variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  }
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: 'easeOut',
+      },
+    },
+  }
+
   return (
     <div
       id="lending"
       className="flex flex-col items-center justify-center px-4 py-12 sm:px-0 sm:py-22"
     >
-      <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-100px' }}
+        transition={{ duration: 0.6 }}
+        className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center"
+      >
         <h1 className="text-foreground mb-2 max-w-[365px] text-center text-[24px] font-bold sm:text-[32px]">
           One Ecosystem, Two Powerful Products
         </h1>
@@ -63,16 +93,24 @@ const ProductsSection = () => {
           Everything you expect from a smart investment—secure contracts, real
           returns, and complete transparency.
         </p>
-      </div>
+      </motion.div>
 
       {/* Tab Navigation */}
-      <div className="mb-4 sm:mb-12 flex items-center justify-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="mb-4 flex items-center justify-center sm:mb-12"
+      >
         <div
           className="rounded-[12px] p-px"
           style={{ background: 'var(--primary-gradient)' }}
         >
           <div className="bg-background flex rounded-[12px] p-2">
-            <button
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setActiveTab('lending')}
               className={`rounded-[8px] px-6 py-3 text-sm font-medium transition-all duration-200 ${
                 activeTab === 'lending'
@@ -81,8 +119,10 @@ const ProductsSection = () => {
               }`}
             >
               Lending & Borrowing
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               onClick={() => setActiveTab('multipool')}
               className={`rounded-[8px] px-6 py-3 text-sm font-medium transition-all duration-200 ${
                 activeTab === 'multipool'
@@ -91,31 +131,67 @@ const ProductsSection = () => {
               }`}
             >
               Multi-pool Investment
-            </button>
+            </motion.button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Cards Grid */}
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {currentData.map((item, index) => (
-          <div
-            key={`${activeTab}-${index}`}
-            className="w-full rounded-[16px] p-px"
-            style={{ background: 'var(--primary-gradient)' }}
-          >
-            <div className="bg-primary dark:bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-8">
-              <Image src={item.icon} alt={item.title} width={40} height={40} />
-              <h3 className="text-foreground text-xl leading-[28px] font-bold">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground text-sm leading-[20px] font-medium">
-                {item.description}
-              </p>
-            </div>
-          </div>
-        ))}
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+          className="mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3"
+        >
+          {currentData.map((item, index) => (
+            <motion.div
+              key={`${activeTab}-${index}`}
+              variants={cardVariants}
+              whileHover={{
+                y: -5,
+                transition: { duration: 0.2, ease: 'easeOut' },
+              }}
+              className="w-full rounded-[16px] p-px"
+              style={{ background: 'var(--primary-gradient)' }}
+            >
+              <div className="bg-primary dark:bg-background flex h-full w-full flex-col items-start space-y-4 rounded-[16px] p-8">
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.1 + index * 0.1, duration: 0.3 }}
+                >
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={40}
+                    height={40}
+                  />
+                </motion.div>
+                <motion.h3
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
+                  className="text-foreground text-xl leading-[28px] font-bold"
+                >
+                  {item.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
+                  className="text-muted-foreground text-sm leading-[20px] font-medium"
+                >
+                  {item.description}
+                </motion.p>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
     </div>
   )
 }
