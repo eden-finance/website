@@ -1,6 +1,6 @@
 'use client'
 import { useState } from 'react'
-
+import Image from 'next/image'
 import { Pool } from '~/sections/pools-section'
 import { formatLockDuration, formatWeiToCNGN } from '~/lib/utils'
 import { InfoTooltip } from '../ui/infoToolTip'
@@ -130,7 +130,7 @@ const PoolCard = ({ pool }: PoolCardProps) => {
     <div className="pool-card bg-accent flex h-full w-[320px] flex-shrink-0 flex-col overflow-hidden rounded-[12px] sm:w-[420px]">
       {/* Banner Section */}
       <div className="relative h-24 w-full sm:h-32">
-        <img
+        <Image
           src={getBannerImage()}
           alt={`${pool.name} banner`}
           className="h-full w-full object-cover"
@@ -139,7 +139,7 @@ const PoolCard = ({ pool }: PoolCardProps) => {
         {/* Logo positioned half in banner, half in content */}
         <div className="absolute -bottom-6 left-4 sm:left-6">
           <div className="h-12 w-12 overflow-hidden rounded-lg bg-white p-1 shadow-lg sm:h-16 sm:w-16 dark:bg-[#030303]">
-            <img
+            <Image
               src={getLogoImage()}
               alt={`${pool.name} logo`}
               className="h-full w-full rounded-md object-cover"
@@ -219,9 +219,9 @@ const PoolCard = ({ pool }: PoolCardProps) => {
                     <InfoTooltip
                       message={
                         <>
-                          Percentage of the pool's available funds currently
-                          invested. Higher rates mean most of the pool's
-                          liquidity is in use.
+                          Percentage of the pool&apos;s available funds
+                          currently invested. Higher rates mean most of the
+                          pool&apos;s liquidity is in use.
                         </>
                       }
                     />
