@@ -43,23 +43,23 @@ const PoolCard = ({ pool }: PoolCardProps) => {
   }
 
   // Navigation functions
-  const handleViewDetails = () => {
-    window.open(
-      `${EDEN_APP_URL}pools/${pool.id}`,
-      '_blank',
-      'noopener,noreferrer'
-    )
-  }
+  // const handleViewDetails = () => {
+  //   window.open(
+  //     `${EDEN_APP_URL}pools/${pool.id}`,
+  //     '_blank',
+  //     'noopener,noreferrer'
+  //   )
+  // }
 
-  const handleInvestNow = () => {
-    if (pool.is_active) {
-      window.open(
-        `${EDEN_APP_URL}pools/${pool.id}`,
-        '_blank',
-        'noopener,noreferrer'
-      )
-    }
-  }
+  // const handleInvestNow = () => {
+  //   if (pool.is_active) {
+  //     window.open(
+  //       `${EDEN_APP_URL}pools/${pool.id}`,
+  //       '_blank',
+  //       'noopener,noreferrer'
+  //     )
+  //   }
+  // }
 
   const getTags = () => {
     const tags = []
@@ -296,22 +296,6 @@ const PoolCard = ({ pool }: PoolCardProps) => {
           </div>
         </div>
 
-        {/* Footer Section - Fixed height */}
-        <div className="mt-auto flex flex-none items-center justify-between pt-4">
-          <button
-            onClick={handleViewDetails}
-            className="bg-muted text-muted-foreground hover:bg-muted/80 rounded-full px-4 py-3 text-sm font-medium transition-colors sm:px-6"
-          >
-            View Details
-          </button>
-          <button
-            onClick={handleInvestNow}
-            disabled={!pool.is_active}
-            className="rounded-full bg-gradient-to-r from-[#8959EE] to-[#503290] px-4 py-3 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50 sm:px-6"
-          >
-            {pool.is_active ? 'Invest Now' : 'Inactive'}
-          </button>
-        </div>
       </div>
     </div>
   )
