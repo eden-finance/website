@@ -161,7 +161,7 @@ const PoolsSection = async () => {
             </div>
           </div>
           <Link
-            href={`https://app.vest.edenfinance.org/pools/`}
+            href={`https://vest.edenfinance.org/pools/`}
             target="_blank"
             rel="noopener noreferrer"
           >

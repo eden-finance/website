@@ -5,7 +5,7 @@ import { Pool } from '~/sections/pools-section'
 import { formatLockDuration, formatWeiToCNGN } from '~/lib/utils'
 import { InfoTooltip } from '../ui/infoToolTip'
 
-export const EDEN_APP_URL = 'https://app.vest.edenfinance.org/'
+export const EDEN_APP_URL = 'https://vest.edenfinance.org/'
 
 interface PoolCardProps {
   pool: Pool
