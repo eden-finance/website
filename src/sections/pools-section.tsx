@@ -106,11 +106,11 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      'chain-id': '42421',
+      'chain-id': '42420',
     },
     next: { revalidate: 300 },
   })
-
+  console.log(response)
   if (!response.ok) {
     throw new Error(`HTTP error`)
   }

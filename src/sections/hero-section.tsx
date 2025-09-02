@@ -17,7 +17,7 @@ async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
     }
 
     const data: ApiResponse = await response.json()
-
+    
     if (!data.status) {
       throw new Error('API returned error status')
     }
