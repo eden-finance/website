@@ -110,7 +110,7 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
     },
     next: { revalidate: 300 },
   })
-  console.log(response)
+  
   if (!response.ok) {
     throw new Error(`HTTP error`)
   }
