@@ -24,6 +24,7 @@
       "types": ["./src/types/global.d.ts"],
       "styles": ["./src/styles/globals.css"],
       "utils": ["./src/lib/utils.ts"],
+      "public/*": ["./public/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

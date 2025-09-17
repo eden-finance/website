@@ -5,6 +5,9 @@ import { Pool } from '~/sections/pools-section'
 import { formatLockDuration, formatWeiToCNGN } from '~/lib/utils'
 import { InfoTooltip } from '../ui/infoToolTip'
 
+import bannerFallback from '../../../public/pool/money-market-bg.jpeg'
+import logoFallback from '../../../public/pool/naira-dark.jpeg'
+
 export const EDEN_APP_URL = 'https://vest.edenfinance.org/'
 
 interface PoolCardProps {
@@ -12,6 +15,7 @@ interface PoolCardProps {
 }
 
 const PoolCard = ({ pool }: PoolCardProps) => {
+  console.log(pool)
   const [bannerError, setBannerError] = useState(false)
   const [logoError, setLogoError] = useState(false)
 
@@ -29,7 +33,7 @@ const PoolCard = ({ pool }: PoolCardProps) => {
   // Get the banner image with fallback
   const getBannerImage = () => {
     if (bannerError || !pool.details?.banner_url) {
-      return './banner.jpg'
+      return '/pool/money-market-bg.jpeg'
     }
     return pool.details.banner_url
   }
@@ -37,7 +41,7 @@ const PoolCard = ({ pool }: PoolCardProps) => {
   // Get the logo image with fallback
   const getLogoImage = () => {
     if (logoError || !pool.details?.logo_url) {
-      return './naija.png'
+      return logoFallback
     }
     return pool.details.logo_url
   }
@@ -131,7 +135,9 @@ const PoolCard = ({ pool }: PoolCardProps) => {
       {/* Banner Section */}
       <div className="relative h-24 w-full sm:h-32">
         <Image
-          src={getBannerImage()}
+          src={bannerError || !pool.details?.banner_url ? bannerFallback : pool.details.banner_url}
+          fill
+          sizes="(min-width: 640px) 420px, 320px"
           alt={`${pool.name} banner`}
           className="h-full w-full object-cover"
           onError={() => setBannerError(true)}
@@ -140,7 +146,9 @@ const PoolCard = ({ pool }: PoolCardProps) => {
         <div className="absolute -bottom-6 left-4 sm:left-6">
           <div className="h-12 w-12 overflow-hidden rounded-lg bg-white p-1 shadow-lg sm:h-16 sm:w-16 dark:bg-[#030303]">
             <Image
-              src={getLogoImage()}
+              width={128}
+              height={128}
+              src={logoError || !pool.details?.logo_url ? logoFallback : pool.details.logo_url}
               alt={`${pool.name} logo`}
               className="h-full w-full rounded-md object-cover"
               onError={() => setLogoError(true)}

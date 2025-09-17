@@ -56,7 +56,7 @@ export const formatLockDuration = (seconds: number) => {
   return parts.join(', ') + ' and ' + lastPart
 }
 export const formatWeiToCNGN = (weiValue: string): string => {
-  const value = parseFloat(weiValue) / 1e18
+  const value = parseFloat(weiValue) / 1e6
   return new Intl.NumberFormat('en-US', {
     minimumFractionDigits: 0,
     maximumFractionDigits: 2,

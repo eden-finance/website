@@ -99,14 +99,14 @@ function DataError() {
 
 async function fetchPoolsData(): Promise<Pool[] | null> {
   const baseUrl =
-    process.env.EDEN_BASE_URL || 'https://api.edenfinance.org/api/v1'
+    process.env.EDEN_BASE_URL
   const url = `${baseUrl}/pools`
 
   const response = await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      'chain-id': '42420',
+      'chain-id': '42421',
     },
     next: { revalidate: 300 },
   })
@@ -116,7 +116,7 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
   }
 
   const data: PoolsApiResponse = await response.json()
-
+  console.log(data)
   if (!data.data || !Array.isArray(data.data)) {
     throw new Error('Invalid API response format')
   }
@@ -127,7 +127,7 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
 const PoolsSection = async () => {
   const poolsData = await fetchPoolsData()
 
-  const triplePoolsData = poolsData ? [...poolsData, ...poolsData] : []
+  const triplePoolsData = poolsData ? [...poolsData] : []
 
   return (
     <div
@@ -154,7 +154,7 @@ const PoolsSection = async () => {
         <>
           {/* Infinite Slider Container */}
           <div className="mb-10 w-full overflow-hidden">
-            <div className="animate-infinite-scroll flex w-fit gap-5">
+            <div className="mx-auto mb-10 flex max-w-[488px] flex-col items-center justify-center px-4 sm:px-0">
               {triplePoolsData.map((pool, index) => (
                 <PoolCard key={`${pool.id}-${index}`} pool={pool} />
               ))}

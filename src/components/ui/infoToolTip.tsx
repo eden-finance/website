@@ -141,7 +141,8 @@ export const InfoTooltip: React.FC<InfoTooltipProps> = ({
         onBlur={() => setOpen(false)}
         className="group border-foreground/30 text-foreground/70 hover:text-foreground hover:border-foreground/50 inline-flex h-4 w-4 items-center justify-center focus:ring-2 focus:outline-none sm:h-5 sm:w-5"
       >
-        <Image src={'./info.svg'} alt="info" />
+        <Image width={128}
+          height={128} src={'./info.svg'} alt="info" />
       </button>
 
       {open &&
