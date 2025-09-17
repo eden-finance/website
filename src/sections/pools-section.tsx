@@ -98,8 +98,17 @@ function DataError() {
 }
 
 async function fetchPoolsData(): Promise<Pool[] | null> {
-  const baseUrl =
-    process.env.EDEN_BASE_URL
+
+  function getApiBase() {
+    if (typeof window === 'undefined') {
+      return (
+        process.env.EDEN_BASE_URL || process.env.NEXT_PUBLIC_EDEN_BASE_URL || ''
+      )
+    }
+    return process.env.NEXT_PUBLIC_EDEN_BASE_URL || ''
+  }
+
+  const baseUrl = getApiBase()
   const url = `${baseUrl}/pools`
 
   const response = await fetch(url, {

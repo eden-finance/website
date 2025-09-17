@@ -5,8 +5,18 @@ import { HeroContent } from './hero-content'
 
 async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
   try {
+    function getApiBase() {
+      if (typeof window === 'undefined') {
+        return (
+          process.env.EDEN_BASE_URL || process.env.NEXT_PUBLIC_EDEN_BASE_URL || ''
+        )
+      }
+      return process.env.NEXT_PUBLIC_EDEN_BASE_URL || ''
+    }
+    const baseUrl = getApiBase()
+
     const response = await fetch(
-      `${process.env.EDEN_BASE_URL}/analytics/overview`,
+      `${baseUrl}/analytics/overview`,
       {
         next: { revalidate: 300 },
       }
