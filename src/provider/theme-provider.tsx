@@ -3,7 +3,6 @@
 import * as React from 'react'
 import type { ThemeState } from 'types'
 import { store_theme } from '~/actions/theme'
-import { inDevEnvironment } from '~/lib/utils'
 import { useLayoutEffect, useContext, createContext, useState } from 'react'
 
 type Coords = {
@@ -55,22 +54,6 @@ export function ThemeProvider({
     setMounted(true)
   }, [])
 
-  React.useEffect(() => {
-    if (!inDevEnvironment) return
-    const text = '%c Made with ❤ - Phoenix ',
-      style = [
-        'font-size: 12px',
-        'color: #fffce1',
-        'font-family: monospace',
-        'font-weight: 500',
-        'background: #141717',
-        'display: inline-block',
-        'padding: 1rem 3rem',
-        'border: 1px solid #CF3A46',
-        'border-radius: 4px;',
-      ].join(';')
-   
-  }, [])
 
   useLayoutEffect(() => {
     if (!mounted) return

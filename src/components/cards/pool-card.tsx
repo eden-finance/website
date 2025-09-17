@@ -29,21 +29,6 @@ const PoolCard = ({ pool }: PoolCardProps) => {
     return `${min} - ${max}`
   }
 
-  // Get the banner image with fallback
-  const getBannerImage = () => {
-    if (bannerError || !pool.details?.banner_url) {
-      return '/pool/money-market-bg.jpeg'
-    }
-    return pool.details.banner_url
-  }
-
-  // Get the logo image with fallback
-  const getLogoImage = () => {
-    if (logoError || !pool.details?.logo_url) {
-      return logoFallback
-    }
-    return pool.details.logo_url
-  }
 
   // Navigation functions
   // const handleViewDetails = () => {
