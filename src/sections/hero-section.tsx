@@ -18,6 +18,11 @@ async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
     const response = await fetch(
       `${baseUrl}/analytics/overview`,
       {
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'chain-id': '42420',
+        },
         next: { revalidate: 300 },
       }
     )
