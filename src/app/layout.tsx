@@ -77,6 +77,10 @@ export default async function RootLayout({
 }>) {
   const theme = await retrive_theme()
 
+  if (process.env.NODE_ENV === 'production') {
+    console.log('[SSR] entering Home.getData')
+  }
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
