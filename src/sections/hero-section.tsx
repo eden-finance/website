@@ -8,29 +8,18 @@ async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
     const response = await fetch(
       `${process.env.EDEN_BASE_URL}/analytics/overview`,
       {
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          'chain-id': '42420',
-        },
         next: { revalidate: 300 },
       }
     )
 
     if (!response.ok) {
-      console.log(`failed to fetch analytics: HTTP error! status: ${response.status}`)
-
-      return []
-      // throw new Error(`HTTP error! status: ${response.status}`)
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
 
     const data: ApiResponse = await response.json()
-
+    
     if (!data.status) {
-      console.log(`API returned error status`, data)
-
-      return []
-      // throw new Error('API returned error status')
+      throw new Error('API returned error status')
     }
 
     // Convert and format the data
