@@ -112,13 +112,18 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
   })
   
   if (!response.ok) {
-    throw new Error(`HTTP error`)
+    console.log("failed to fetch pools. HTTP error", response)
+    return []
+    // throw new Error(`HTTP error`)
   }
 
   const data: PoolsApiResponse = await response.json()
 
   if (!data.data || !Array.isArray(data.data)) {
-    throw new Error('Invalid API response format')
+    console.log("failed to fetch pools: Invalid API response format",data)
+
+    return []
+    // throw new Error('Invalid API response format')
   }
   return data.data.slice(0, 5)
   // .map(transformPoolData)
