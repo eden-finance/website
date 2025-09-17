@@ -1,5 +1,5 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, Variants } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FeatureData } from '~/types/stats'
@@ -9,7 +9,7 @@ interface HeroContentProps {
 }
 
 // Animation variants for cleaner code
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -20,21 +20,21 @@ const containerVariants = {
   }
 }
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.6, ease: "easeOut" }
+    transition: { duration: 0.6, ease: [0.32, 0.72, 0, 1] }
   }
 }
 
-const featureCardVariants = {
+const featureCardVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { duration: 0.5, ease: "easeOut" }
+    transition: { duration: 0.5, ease: [0.32, 0.72, 0, 1] }
   }
 }
 
@@ -125,7 +125,7 @@ export const HeroContent = ({ features }: HeroContentProps) => {
               transition={{ delay: 1.0 + index * 0.1 }}
               whileHover={{ 
                 y: -8, 
-                transition: { duration: 0.2, ease: "easeOut" } 
+                transition: { duration: 0.2, ease: [0.32, 0.72, 0, 1] } 
               }}
               className="h-full rounded-[16px] p-[1px]"
               style={{ background: 'var(--primary-gradient)' }}

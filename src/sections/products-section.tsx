@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence, easeOut } from 'framer-motion'
 
 const ProductsSection = () => {
   const [activeTab, setActiveTab] = useState('lending')
@@ -69,7 +69,7 @@ const ProductsSection = () => {
       y: 0,
       transition: {
         duration: 0.5,
-        ease: 'easeOut',
+        ease: easeOut,
       },
     },
   }

@@ -19,9 +19,9 @@ export function formatNumber(num: number): string {
   }
 }
 
-export function weiToNumber(weiString: string): number {
+export function weiToNumber(weiString: string,decimals:number = 6): number {
   const wei = BigInt(weiString)
-  const divisor = BigInt(10 ** 18)
+  const divisor = BigInt(10 ** decimals)
   const result = Number(wei) / Number(divisor)
   return result
 }
