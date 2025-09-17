@@ -69,7 +69,7 @@ export function ThemeProvider({
         'border: 1px solid #CF3A46',
         'border-radius: 4px;',
       ].join(';')
-    console.log(text, style)
+   
   }, [])
 
   useLayoutEffect(() => {

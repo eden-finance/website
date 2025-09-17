@@ -106,7 +106,7 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      'chain-id': '42421',
+      'chain-id': '42420',
     },
     next: { revalidate: 300 },
   })
@@ -116,7 +116,7 @@ async function fetchPoolsData(): Promise<Pool[] | null> {
   }
 
   const data: PoolsApiResponse = await response.json()
-  console.log(data)
+
   if (!data.data || !Array.isArray(data.data)) {
     throw new Error('Invalid API response format')
   }

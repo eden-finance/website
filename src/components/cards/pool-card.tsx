@@ -15,7 +15,6 @@ interface PoolCardProps {
 }
 
 const PoolCard = ({ pool }: PoolCardProps) => {
-  console.log(pool)
   const [bannerError, setBannerError] = useState(false)
   const [logoError, setLogoError] = useState(false)
 
