@@ -6,6 +6,10 @@ export interface ApiResponse {
       '7d': string
       '30d': string
     }
+    total_deposits_wei: string
+    total_withdrawals_wei: string
+    total_volume_processed_wei: string
+    total_trade_volume_wei: string
     active_pools: number
     total_investors: number
     avg_apy_bps_tvl_weighted: number

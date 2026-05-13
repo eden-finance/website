@@ -40,6 +40,8 @@ async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
     // Convert and format the data
     const tvlNumber = weiToNumber(data.data.tvl_wei)
     const formattedTvl = formatNumber(tvlNumber)
+    const tradeVolumeNumber = weiToNumber(data.data.total_trade_volume_wei)
+    const formattedTradeVolume = formatNumber(tradeVolumeNumber)
     const formattedApy = (data.data.avg_apy_bps_tvl_weighted / 100).toFixed(1)
 
     return [
@@ -54,9 +56,9 @@ async function fetchAnalyticsData(): Promise<FeatureData[] | null> {
         icon: '/pools.svg',
       },
       {
-        title: 'Min Investment',
-        description: '1,000 cNGN',
-        icon: '/users.svg',
+        title: 'Total Trade Volume',
+        description: `${formattedTradeVolume} cNGN`,
+        icon: '/liquidity.svg',
       },
       {
         title: 'Average Pool Returns',
